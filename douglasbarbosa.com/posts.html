@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posts — Douglas Barbosa</title>
+  <link rel="stylesheet" href="assets/main.css" />
+  <style>
+    /* Featured */
+    .db-featured { background: var(--navy); border-radius: 16px; padding: 28px 24px; margin-bottom: 16px; text-decoration: none; display: block; position: relative; overflow: hidden; transition: opacity 0.15s; }
+    .db-featured::before { content:''; position:absolute; top:0; left:0; width:100%; height:3px; background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+    .db-featured:hover { opacity: 0.92; }
+    .db-featured-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .db-featured-badge  { font-family: var(--font-mono); font-size:10px; color:var(--blue); letter-spacing:0.1em; text-transform:uppercase; }
+    .db-featured-format { font-family: var(--font-mono); font-size:10px; color:#334155; }
+    .db-featured-title  { font-family: var(--font-display); font-size:20px; font-weight:500; color:#fff; line-height:1.3; margin-bottom:10px; }
+    .db-featured-desc   { font-family: var(--font-body); font-size:13px; color:var(--gray500); line-height:1.7; margin-bottom:18px; }
+    .db-featured-footer { display:flex; justify-content:space-between; align-items:center; }
+    .db-featured-date   { font-family: var(--font-mono); font-size:11px; color:#334155; }
+    .db-featured-arrow  { font-size:14px; color:var(--blue); }
+
+    /* Cards */
+    .db-card { text-decoration: none; }
+    .db-card-meta   { display:flex; justify-content:space-between; align-items:center; }
+    .db-card-cat    { font-family: var(--font-mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:3px 8px; border-radius:5px; }
+    .db-card-cat.tech    { color:var(--blue); background:rgba(37,99,235,0.08); }
+    .db-card-cat.career  { color:#0891B2; background:rgba(6,182,212,0.08); }
+    .db-card-cat.general { color:#7C3AED; background:rgba(124,58,237,0.08); }
+    .db-card-format { font-family: var(--font-mono); font-size:10px; color:var(--gray300); }
+    .db-card-title  { font-family: var(--font-display); font-size:16px; font-weight:500; color:var(--navy); line-height:1.35; }
+    .db-card-desc   { font-family: var(--font-body); font-size:13px; color:var(--gray500); line-height:1.6; }
+    .db-card-footer { display:flex; justify-content:space-between; align-items:center; margin-top:4px; }
+    .db-card-date   { font-family: var(--font-mono); font-size:11px; color:var(--gray300); }
+    .db-card-arrow  { font-size:13px; color:var(--gray300); transition:all 0.15s; }
+    .db-card:hover .db-card-arrow { color:var(--blue); transform: translate(2px,-2px); }
+
+    .db-empty { display:none; text-align:center; padding:48px 24px; background:#fff; border-radius:16px; border:1px dashed var(--gray200); margin-bottom:24px; }
+    .db-empty-icon { font-size:32px; margin-bottom:12px; }
+    .db-empty-text { font-family: var(--font-body); font-size:14px; color:var(--gray400); }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <nav class="db-nav">
+    <a href="index.html" class="db-logo">DB<span>_</span></a>
+    <div class="db-nav-right">
+      <div class="db-lang">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="pt">PT</button>
+      </div>
+      <div class="db-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+    <div class="db-drawer" id="drawer">
+      <a href="skills.html"><span class="db-drawer-num">01</span><span data-i18n="nav.skills">My Skills</span></a>
+      <a href="services.html"><span class="db-drawer-num">02</span><span data-i18n="nav.services">How can I help you?</span></a>
+      <a href="portfolio.html"><span class="db-drawer-num">03</span><span data-i18n="nav.portfolio">What I did.</span></a>
+      <a href="posts.html" class="active"><span class="db-drawer-num">04</span><span data-i18n="nav.posts">Posts</span></a>
+    </div>
+  </nav>
+
+  <div class="content-wrap">
+
+    <p class="db-page-label" data-i18n="posts.pageLabel">04 — Posts</p>
+    <h1 class="db-page-title">
+      <span data-i18n="posts.title1">Things I think</span><br>
+      <span data-i18n="posts.title2">about out loud.</span>
+    </h1>
+    <p class="db-page-sub" data-i18n="posts.sub">Technical notes, career thoughts and professional reflections.</p>
+
+    <div class="db-filters">
+      <button class="db-filter active" onclick="filterPosts(this,'all')"     data-i18n="posts.filters.0">All</button>
+      <button class="db-filter"        onclick="filterPosts(this,'tech')"    data-i18n="posts.filters.1">Technical</button>
+      <button class="db-filter"        onclick="filterPosts(this,'career')"  data-i18n="posts.filters.2">Career</button>
+      <button class="db-filter"        onclick="filterPosts(this,'general')" data-i18n="posts.filters.3">Reflections</button>
+      <button class="db-filter"        onclick="filterPosts(this,'article')" data-i18n="posts.filters.4">Articles</button>
+      <button class="db-filter"        onclick="filterPosts(this,'note')"    data-i18n="posts.filters.5">Quick Notes</button>
+    </div>
+
+    <!-- Featured -->
+    <a class="db-featured" href="posts/why-code-second.html" id="featured" data-cat="tech" data-format="article">
+      <div class="db-featured-meta">
+        <span class="db-featured-badge">✦ Featured · Technical</span>
+        <span class="db-featured-format">Article</span>
+      </div>
+      <div class="db-featured-title">Why I stopped thinking about code first — and started thinking about problems</div>
+      <div class="db-featured-desc">Five years building systems taught me that the most expensive mistakes happen before a single line is written.</div>
+      <div class="db-featured-footer">
+        <span class="db-featured-date">May 2026</span>
+        <span class="db-featured-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- Cards -->
+    <div class="db-grid" id="posts-grid">
+
+      <a class="db-card" href="posts/why-code-second.html" data-cat="career" data-format="article">
+        <div class="db-card-meta"><span class="db-card-cat career">Career</span><span class="db-card-format">Article</span></div>
+        <div class="db-card-title">From Product Owner to Engineer — what I gained by crossing the line</div>
+        <div class="db-card-desc">Most engineers never sit in a PO seat. I did both. Here's what changes when you understand both sides.</div>
+        <div class="db-card-footer"><span class="db-card-date">Apr 2026</span><span class="db-card-arrow">↗</span></div>
+      </a>
+
+      <a class="db-card" href="posts/why-code-second.html" data-cat="tech" data-format="note">
+        <div class="db-card-meta"><span class="db-card-cat tech">Technical</span><span class="db-card-format">Quick Note</span></div>
+        <div class="db-card-title">One habit that made my code reviews actually useful</div>
+        <div class="db-card-desc">Stop reviewing code. Start reviewing intent.</div>
+        <div class="db-card-footer"><span class="db-card-date">Apr 2026</span><span class="db-card-arrow">↗</span></div>
+      </a>
+
+      <a class="db-card" href="posts/why-code-second.html" data-cat="general" data-format="note">
+        <div class="db-card-meta"><span class="db-card-cat general">Reflection</span><span class="db-card-format">Quick Note</span></div>
+        <div class="db-card-title">Working in Dublin taught me something no bootcamp could</div>
+        <div class="db-card-desc">On culture, communication, and what "professional" actually means across borders.</div>
+        <div class="db-card-footer"><span class="db-card-date">Mar 2026</span><span class="db-card-arrow">↗</span></div>
+      </a>
+
+      <a class="db-card" href="posts/why-code-second.html" data-cat="tech" data-format="article">
+        <div class="db-card-meta"><span class="db-card-cat tech">Technical</span><span class="db-card-format">Article</span></div>
+        <div class="db-card-title">Microservices vs Monolith — the question nobody asks correctly</div>
+        <div class="db-card-desc">It's not about architecture. It's about the size of your team and the speed of your decisions.</div>
+        <div class="db-card-footer"><span class="db-card-date">Feb 2026</span><span class="db-card-arrow">↗</span></div>
+      </a>
+
+      <a class="db-card" href="posts/why-code-second.html" data-cat="career" data-format="note">
+        <div class="db-card-meta"><span class="db-card-cat career">Career</span><span class="db-card-format">Quick Note</span></div>
+        <div class="db-card-title">The "just a dev" trap — and how to get out of it</div>
+        <div class="db-card-desc">Your job title is not your ceiling. But you have to stop acting like it is.</div>
+        <div class="db-card-footer"><span class="db-card-date">Jan 2026</span><span class="db-card-arrow">↗</span></div>
+      </a>
+
+    </div>
+
+    <div class="db-empty" id="empty-state">
+      <div class="db-empty-icon">📭</div>
+      <p class="db-empty-text" data-i18n="posts.emptyText">No posts in this category yet.<br>Check back soon.</p>
+    </div>
+
+    <div class="db-add-note">
+      <span style="font-size:20px">✍️</span>
+      <p class="db-add-text" data-i18n="posts.addNote"><strong>Growing over time.</strong> New posts whenever there's something worth saying — no schedule, no filler.</p>
+    </div>
+
+  </div>
+
+  <footer class="db-footer">
+    <span class="db-footer-logo">DB<span>_</span></span>
+    <span class="db-footer-copy" data-i18n="footer.copy">© 2026 Douglas Barbosa</span>
+  </footer>
+</div>
+<script src="assets/i18n.js"></script>
+<script>
+  function filterPosts(btn, filter) {
+    const featured = document.getElementById('featured');
+    const cards    = document.querySelectorAll('#posts-grid .db-card');
+    const empty    = document.getElementById('empty-state');
+    let visible    = 0;
+
+    const showF = filter === 'all' || filter === featured.dataset.cat || filter === featured.dataset.format;
+    featured.style.display = showF ? 'block' : 'none';
+    if (showF) visible++;
+
+    cards.forEach(card => {
+      const show = filter === 'all' || filter === card.dataset.cat || filter === card.dataset.format;
+      card.style.display = show ? 'flex' : 'none';
+      if (show) visible++;
+    });
+
+    empty.style.display = visible === 0 ? 'block' : 'none';
+    document.querySelectorAll('.db-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

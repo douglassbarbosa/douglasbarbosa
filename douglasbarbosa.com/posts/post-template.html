@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post — Douglas Barbosa</title>
+  <link rel="stylesheet" href="../assets/main.css" />
+  <style>
+    /* Post header */
+    .db-post-header { background: #fff; border-bottom: 1px solid var(--gray200); padding: 40px 24px 36px; }
+    .db-post-meta   { display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+    .db-post-cat    { font-family:var(--font-mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:6px; color:var(--blue); background:rgba(37,99,235,0.08); }
+    .db-post-format { font-family:var(--font-mono); font-size:10px; color:var(--gray300); }
+    .db-post-dot    { color:var(--gray200); font-size:10px; }
+    .db-post-date   { font-family:var(--font-mono); font-size:10px; color:var(--gray300); }
+    .db-post-title  { font-family:var(--font-display); font-size:28px; font-weight:500; color:var(--navy); line-height:1.2; letter-spacing:-0.02em; margin-bottom:14px; }
+    .db-post-desc   { font-family:var(--font-body); font-size:15px; color:var(--gray500); line-height:1.7; }
+    .db-read-time   { font-family:var(--font-mono); font-size:11px; color:var(--gray400); margin-top:16px; display:flex; align-items:center; gap:6px; }
+
+    /* Body */
+    .db-post-body   { padding: 40px 24px 0; }
+    .db-post-body p { font-family:var(--font-body); font-size:15px; color:var(--gray700); line-height:1.8; margin-bottom:24px; }
+    .db-post-body h2 { font-family:var(--font-display); font-size:20px; font-weight:500; color:var(--navy); line-height:1.3; margin-top:40px; margin-bottom:14px; letter-spacing:-0.01em; }
+    .db-post-body h3 { font-family:var(--font-display); font-size:16px; font-weight:500; color:var(--navy); margin-top:28px; margin-bottom:10px; }
+
+    /* Pull quote */
+    .db-pullquote { border-left:3px solid var(--blue); padding:16px 20px; background:rgba(37,99,235,0.04); border-radius:0 10px 10px 0; margin:32px 0; }
+    .db-pullquote p { font-family:var(--font-display); font-size:17px; font-weight:500; color:var(--navy); line-height:1.5; margin-bottom:0 !important; font-style:italic; }
+
+    /* Code */
+    .db-code     { background:var(--navy); border-radius:10px; padding:20px; margin:24px 0; overflow-x:auto; }
+    .db-code pre { font-family:var(--font-mono); font-size:13px; color:var(--gray400); line-height:1.7; white-space:pre; }
+    .db-code pre .kw { color:var(--blue); }
+    .db-code pre .str{ color:var(--cyan); }
+    .db-code pre .cm { color:#334155; }
+
+    /* Post tags */
+    .db-post-tags { display:flex; flex-wrap:wrap; gap:8px; margin:40px 0 0; padding-top:32px; border-top:1px solid var(--gray200); }
+    .db-post-tag  { font-family:var(--font-mono); font-size:11px; color:var(--gray500); background:var(--gray100); border:1px solid var(--gray200); padding:4px 12px; border-radius:6px; }
+
+    /* Links box */
+    .db-links-box    { margin:32px 24px 0; border:1px solid var(--gray200); border-radius:14px; overflow:hidden; }
+    .db-links-header { display:flex; align-items:center; gap:8px; padding:14px 18px; background:var(--gray50); border-bottom:1px solid var(--gray200); }
+    .db-links-header-label { font-family:var(--font-mono); font-size:10px; color:var(--gray400); letter-spacing:0.1em; text-transform:uppercase; }
+    .db-links-list   { background:#fff; }
+    .db-link-row     { display:flex; align-items:baseline; gap:10px; padding:12px 18px; border-bottom:1px solid var(--gray100); text-decoration:none; transition:background 0.15s; }
+    .db-link-row:last-child { border-bottom:none; }
+    .db-link-row:hover { background:var(--gray50); }
+    .db-link-num     { font-family:var(--font-mono); font-size:10px; color:var(--gray300); min-width:16px; flex-shrink:0; }
+    .db-link-content { flex:1; min-width:0; }
+    .db-link-title   { font-family:var(--font-body); font-size:13px; font-weight:500; color:var(--navy); margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .db-link-url     { font-family:var(--font-mono); font-size:10px; color:var(--blue); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .db-link-tag     { font-family:var(--font-mono); font-size:10px; color:var(--gray400); background:var(--gray100); border:1px solid var(--gray200); padding:2px 7px; border-radius:4px; flex-shrink:0; }
+
+    /* Footnotes */
+    .db-footnotes       { margin:20px 24px 0; padding:20px 0 0; border-top:1px dashed var(--gray200); }
+    .db-footnotes-label { font-family:var(--font-mono); font-size:10px; color:var(--gray300); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; }
+    .db-footnote        { display:flex; gap:10px; margin-bottom:10px; }
+    .db-footnote-num    { font-family:var(--font-mono); font-size:11px; color:var(--blue); min-width:18px; flex-shrink:0; margin-top:1px; }
+    .db-footnote-text   { font-family:var(--font-body); font-size:12px; color:var(--gray400); line-height:1.6; }
+    .db-footnote-text a { color:var(--blue); text-decoration:none; }
+
+    /* Post nav */
+    .db-post-nav      { background:#fff; border-top:1px solid var(--gray200); padding:24px; display:flex; flex-direction:column; gap:12px; margin-top:40px; }
+    .db-post-nav-label{ font-family:var(--font-mono); font-size:10px; color:var(--gray400); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px; }
+    .db-post-nav-link { display:flex; justify-content:space-between; align-items:center; padding:16px; background:var(--gray50); border:1px solid var(--gray200); border-radius:12px; text-decoration:none; transition:border-color 0.15s; }
+    .db-post-nav-link:hover { border-color:var(--blue); }
+    .db-post-nav-title{ font-family:var(--font-display); font-size:14px; font-weight:500; color:var(--navy); line-height:1.3; }
+    .db-post-nav-arrow{ font-size:14px; color:var(--gray300); flex-shrink:0; margin-left:12px; }
+    .db-post-nav-link:hover .db-post-nav-arrow { color:var(--blue); }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <nav class="db-nav">
+    <a href="../index.html" class="db-logo">DB<span>_</span></a>
+    <div class="db-nav-right">
+      <div class="db-lang">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="pt">PT</button>
+      </div>
+      <a href="../posts.html" class="db-back" data-i18n="post.backLabel">← Posts</a>
+    </div>
+  </nav>
+
+  <!-- Post header -->
+  <div class="db-post-header">
+    <div class="db-post-meta">
+      <span class="db-post-cat">Technical</span>
+      <span class="db-post-dot">·</span>
+      <span class="db-post-format">Article</span>
+      <span class="db-post-dot">·</span>
+      <span class="db-post-date">May 2026</span>
+    </div>
+    <h1 class="db-post-title">Why I stopped thinking about code first — and started thinking about problems</h1>
+    <p class="db-post-desc">Five years building systems taught me that the most expensive mistakes happen before a single line is written.</p>
+    <div class="db-read-time">⏱ 5 <span data-i18n="posts.minRead">min read</span></div>
+  </div>
+
+  <!-- Body -->
+  <div class="db-post-body">
+    <p>There's a moment in most engineers' careers where something shifts. You stop asking <em>"how do I build this?"</em> and start asking <em>"should we build this at all?"</em></p>
+    <p>For me, that moment came after delivering a feature that took three weeks to build — and watching it get used by exactly two people before being quietly removed from the product.<sup style="font-family:var(--font-mono);font-size:10px;color:var(--blue);margin-left:2px">2</sup></p>
+    <p>The code was clean. The tests passed. The CI/CD pipeline was green. And none of that mattered.</p>
+
+    <div class="db-pullquote">
+      <p>"The most expensive line of code is the one that solves the wrong problem."</p>
+    </div>
+
+    <h2>What nobody teaches you in bootcamp</h2>
+    <p>Technical skills get you hired. But they don't make you valuable — at least not in the way most engineers think. What makes you valuable is understanding the <em>impact</em> of what you build.</p>
+    <p>I spent three years as a Product Owner before moving fully into engineering. That experience changed how I read a ticket, how I ask questions in planning, and how I push back when something doesn't make sense.</p>
+
+    <h2>A practical shift</h2>
+    <p>Before opening my editor, I now ask three questions: what problem are we actually solving, how will we know it worked, and what's the simplest version that proves the idea?</p>
+
+    <div class="db-code">
+      <pre><span class="cm">// Before: solving the stated requirement</span>
+<span class="kw">public async</span> Task SendWeeklyReport(User user) {
+  <span class="cm">// 200 lines nobody reads</span>
+}
+
+<span class="cm">// After: solving the actual problem</span>
+<span class="kw">public async</span> Task NotifyUserOfRelevantChange(
+  User user, <span class="kw">string</span> changeContext) {
+  <span class="cm">// Does one thing. Triggered by real behaviour.</span>
+}</pre>
+    </div>
+
+    <p>Software is just the medium. What you're really building is outcomes — for users, for teams, for the business. The sooner that becomes instinct, the better engineer you become.<sup style="font-family:var(--font-mono);font-size:10px;color:var(--blue);margin-left:2px">1</sup></p>
+
+    <div class="db-post-tags">
+      <span class="db-post-tag">engineering</span>
+      <span class="db-post-tag">mindset</span>
+      <span class="db-post-tag">.NET</span>
+      <span class="db-post-tag">product thinking</span>
+      <span class="db-post-tag">career</span>
+    </div>
+  </div>
+
+  <!-- Useful links -->
+  <div class="db-links-box">
+    <div class="db-links-header">
+      <span style="font-size:12px">🔗</span>
+      <span class="db-links-header-label" data-i18n="post.linksLabel">Useful links & references</span>
+    </div>
+    <div class="db-links-list">
+      <a class="db-link-row" href="https://martinfowler.com" target="_blank">
+        <span class="db-link-num">01</span>
+        <div class="db-link-content">
+          <div class="db-link-title">Patterns of Enterprise Application Architecture</div>
+          <div class="db-link-url">martinfowler.com</div>
+        </div>
+        <span class="db-link-tag">Reference</span>
+      </a>
+      <a class="db-link-row" href="https://basecamp.com/shapeup" target="_blank">
+        <span class="db-link-num">02</span>
+        <div class="db-link-content">
+          <div class="db-link-title">Shape Up — Stop Running in Circles</div>
+          <div class="db-link-url">basecamp.com/shapeup</div>
+        </div>
+        <span class="db-link-tag">Book</span>
+      </a>
+      <a class="db-link-row" href="https://github.com/douglassbarbosa" target="_blank">
+        <span class="db-link-num">03</span>
+        <div class="db-link-content">
+          <div class="db-link-title">Code examples from this post</div>
+          <div class="db-link-url">github.com/douglassbarbosa</div>
+        </div>
+        <span class="db-link-tag">GitHub</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footnotes -->
+  <div class="db-footnotes">
+    <div class="db-footnotes-label" data-i18n="post.notesLabel">Notes</div>
+    <div class="db-footnote">
+      <span class="db-footnote-num">1</span>
+      <p class="db-footnote-text">This doesn't mean ignoring code quality — it means putting quality in service of outcomes, not the other way around. Clean code that solves the wrong problem is still waste.</p>
+    </div>
+    <div class="db-footnote">
+      <span class="db-footnote-num">2</span>
+      <p class="db-footnote-text">The "two users" story is real. The feature was a scheduled report nobody had asked for — it came from an assumption, not a conversation.</p>
+    </div>
+  </div>
+
+  <!-- Post nav -->
+  <div class="db-post-nav">
+    <div>
+      <div class="db-post-nav-label" data-i18n="post.nextLabel">Next post</div>
+      <a class="db-post-nav-link" href="../posts.html">
+        <div class="db-post-nav-title">From Product Owner to Engineer — what I gained by crossing the line</div>
+        <span class="db-post-nav-arrow">→</span>
+      </a>
+    </div>
+    <div>
+      <div class="db-post-nav-label" data-i18n="post.backToLabel">Back to</div>
+      <a class="db-post-nav-link" href="../posts.html">
+        <div class="db-post-nav-title" data-i18n="post.backToAll">All posts</div>
+        <span class="db-post-nav-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="db-footer">
+    <span class="db-footer-logo">DB<span>_</span></span>
+    <span class="db-footer-copy" data-i18n="footer.copy">© 2026 Douglas Barbosa</span>
+  </footer>
+</div>
+<script src="../assets/i18n.js"></script>
+</body>
+</html>

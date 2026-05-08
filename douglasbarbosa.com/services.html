@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Douglas Barbosa</title>
+  <link rel="stylesheet" href="assets/main.css" />
+  <style>
+    .db-services { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+    .db-service-card { background: #fff; border: 1px solid var(--gray200); border-radius: 16px; padding: 24px; position: relative; overflow: hidden; transition: border-color 0.2s; }
+    .db-service-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background: var(--gray200); transition: background 0.2s; }
+    .db-service-card:hover { border-color: var(--gray300); }
+    .db-service-card:hover::before { background: var(--blue); }
+    .db-service-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .db-service-icon { width: 40px; height: 40px; background: rgba(37,99,235,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .db-service-num  { font-family: var(--font-mono); font-size: 11px; color: var(--gray300); }
+    .db-service-title { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .db-service-desc  { font-family: var(--font-body); font-size: 13px; color: var(--gray500); line-height: 1.7; margin-bottom: 16px; }
+    .db-service-tags  { display: flex; flex-wrap: wrap; gap: 6px; }
+    .db-service-tag   { font-family: var(--font-mono); font-size: 11px; color: var(--blue); background: rgba(37,99,235,0.07); border: 1px solid rgba(37,99,235,0.15); padding: 4px 10px; border-radius: 6px; }
+
+    .db-how { margin-bottom: 48px; }
+    .db-how-steps { display: flex; flex-direction: column; }
+    .db-how-step  { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--gray100); }
+    .db-how-step:last-child { border-bottom: none; }
+    .db-step-num   { font-family: var(--font-mono); font-size: 11px; color: var(--blue); min-width: 24px; margin-top: 2px; }
+    .db-step-title { font-family: var(--font-display); font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+    .db-step-desc  { font-family: var(--font-body); font-size: 13px; color: var(--gray500); line-height: 1.6; }
+
+    .db-cta { background: var(--navy); border-radius: 16px; padding: 32px 24px; text-align: center; }
+    .db-cta-label  { font-family: var(--font-mono); font-size: 10px; color: var(--blue); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+    .db-cta-title  { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: #fff; line-height: 1.3; margin-bottom: 8px; }
+    .db-cta-sub    { font-family: var(--font-body); font-size: 13px; color: var(--gray500); line-height: 1.6; margin-bottom: 24px; }
+    .db-cta-btns   { display: flex; flex-direction: column; gap: 10px; }
+    .db-btn-primary   { font-family: var(--font-display); font-size: 14px; font-weight: 500; color: #fff; background: var(--blue); border: none; border-radius: 10px; padding: 14px 24px; cursor: pointer; text-decoration: none; display: block; transition: background 0.2s; }
+    .db-btn-primary:hover { background: #1D4ED8; }
+    .db-btn-secondary { font-family: var(--font-display); font-size: 14px; font-weight: 500; color: var(--gray500); background: transparent; border: 1px solid #1E293B; border-radius: 10px; padding: 14px 24px; cursor: pointer; text-decoration: none; display: block; transition: all 0.2s; }
+    .db-btn-secondary:hover { color: #fff; border-color: #475569; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <nav class="db-nav">
+    <a href="index.html" class="db-logo">DB<span>_</span></a>
+    <div class="db-nav-right">
+      <div class="db-lang">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="pt">PT</button>
+      </div>
+      <div class="db-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+    <div class="db-drawer" id="drawer">
+      <a href="skills.html"><span class="db-drawer-num">01</span><span data-i18n="nav.skills">My Skills</span></a>
+      <a href="services.html" class="active"><span class="db-drawer-num">02</span><span data-i18n="nav.services">How can I help you?</span></a>
+      <a href="portfolio.html"><span class="db-drawer-num">03</span><span data-i18n="nav.portfolio">What I did.</span></a>
+      <a href="posts.html"><span class="db-drawer-num">04</span><span data-i18n="nav.posts">Posts</span></a>
+    </div>
+  </nav>
+
+  <div class="content-wrap">
+
+    <p class="db-page-label" data-i18n="services.pageLabel">02 — How can I help you?</p>
+    <h1 class="db-page-title">
+      <span data-i18n="services.title1">Let's solve</span><br>
+      <span data-i18n="services.title2">something real.</span>
+    </h1>
+    <p class="db-page-sub" data-i18n="services.sub">I work with businesses and individual entrepreneurs who need more than just someone to write code.</p>
+
+    <!-- Service Cards -->
+    <div class="db-services">
+
+      <div class="db-service-card">
+        <div class="db-service-top"><div class="db-service-icon">🧠</div><span class="db-service-num">01</span></div>
+        <div class="db-service-title" data-i18n="services.cards.0.title">Technical Consulting</div>
+        <p class="db-service-desc" data-i18n="services.cards.0.desc">You have a product, a team, or a technical challenge — and you need someone who understands both the code and the business impact.</p>
+        <div class="db-service-tags" id="tags-0">
+          <span class="db-service-tag">Architecture review</span>
+          <span class="db-service-tag">Tech roadmap</span>
+          <span class="db-service-tag">Team assessment</span>
+          <span class="db-service-tag">Code audit</span>
+        </div>
+      </div>
+
+      <div class="db-service-card">
+        <div class="db-service-top"><div class="db-service-icon">⚡</div><span class="db-service-num">02</span></div>
+        <div class="db-service-title" data-i18n="services.cards.1.title">Systems & API Development</div>
+        <p class="db-service-desc" data-i18n="services.cards.1.desc">From backend services and REST/GraphQL APIs to full-stack features — I build things that scale, perform, and are easy for your team to maintain.</p>
+        <div class="db-service-tags">
+          <span class="db-service-tag">.NET / Node.js</span>
+          <span class="db-service-tag">REST & GraphQL</span>
+          <span class="db-service-tag">Microservices</span>
+          <span class="db-service-tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="db-service-card">
+        <div class="db-service-top"><div class="db-service-icon">🌐</div><span class="db-service-num">03</span></div>
+        <div class="db-service-title" data-i18n="services.cards.2.title">Websites for Business & Entrepreneurs</div>
+        <p class="db-service-desc" data-i18n="services.cards.2.desc">A professional web presence that represents who you are and what you do — clean, fast, and built to convert.</p>
+        <div class="db-service-tags">
+          <span class="db-service-tag">React / Next.js</span>
+          <span class="db-service-tag">Performance</span>
+          <span class="db-service-tag">Mobile-first</span>
+          <span class="db-service-tag">SEO-ready</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- How I work -->
+    <div class="db-how">
+      <div class="section-divider" data-i18n="services.howLabel">How I work</div>
+      <div class="db-how-steps">
+        <div class="db-how-step"><span class="db-step-num">01</span><div><div class="db-step-title" data-i18n="services.howSteps.0.title">Understand first</div><div class="db-step-desc" data-i18n="services.howSteps.0.desc">Before writing a single line, I ask the right questions — about your goals, your users, your constraints.</div></div></div>
+        <div class="db-how-step"><span class="db-step-num">02</span><div><div class="db-step-title" data-i18n="services.howSteps.1.title">Propose clearly</div><div class="db-step-desc" data-i18n="services.howSteps.1.desc">You get a clear scope, timeline and approach — no surprises, no jargon.</div></div></div>
+        <div class="db-how-step"><span class="db-step-num">03</span><div><div class="db-step-title" data-i18n="services.howSteps.2.title">Build with ownership</div><div class="db-step-desc" data-i18n="services.howSteps.2.desc">I treat your project like mine — quality, communication, and delivery matter throughout.</div></div></div>
+        <div class="db-how-step"><span class="db-step-num">04</span><div><div class="db-step-title" data-i18n="services.howSteps.3.title">Hand over properly</div><div class="db-step-desc" data-i18n="services.howSteps.3.desc">Your team inherits something they can understand, maintain, and build on.</div></div></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="db-cta">
+      <p class="db-cta-label" data-i18n="services.ctaLabel">Ready to talk?</p>
+      <h2 class="db-cta-title">
+        <span data-i18n="services.ctaTitle1">Tell me what</span><br>
+        <span data-i18n="services.ctaTitle2">you're building.</span>
+      </h2>
+      <p class="db-cta-sub" data-i18n="services.ctaSub">No long forms, no commitments. Just a conversation about what you need.</p>
+      <div class="db-cta-btns">
+        <a href="mailto:dev@douglasbarbosa.com" class="db-btn-primary" data-i18n="services.ctaBtn1">Send me a message</a>
+        <a href="mailto:dev@douglasbarbosa.com" class="db-btn-secondary" data-i18n="services.ctaBtn2">dev@douglasbarbosa.com</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="db-footer">
+    <span class="db-footer-logo">DB<span>_</span></span>
+    <span class="db-footer-copy" data-i18n="footer.copy">© 2026 Douglas Barbosa</span>
+  </footer>
+</div>
+<script src="assets/i18n.js"></script>
+</body>
+</html>

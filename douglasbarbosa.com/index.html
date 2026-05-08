@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Douglas Barbosa — Software Engineer</title>
+  <meta name="description" content="Full Stack Software Engineer. .NET, APIs & Scalable Systems. Based in Dublin, Ireland." />
+  <link rel="stylesheet" href="assets/main.css" />
+  <style>
+    .db-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 64px 24px 48px; }
+    .db-tag  { font-family: var(--font-mono); font-size: 11px; color: var(--blue); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
+    .db-title {
+      font-family: var(--font-display);
+      font-size: 40px; font-weight: 500; color: var(--navy);
+      line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .db-title em { font-style: normal; color: var(--blue); }
+    .db-subtitle { font-family: var(--font-body); font-size: 15px; color: var(--gray500); line-height: 1.7; max-width: 300px; margin-bottom: 48px; }
+    .db-subtitle em { font-style: normal; color: var(--navy); font-weight: 500; }
+    .db-links { display: flex; flex-direction: column; border-top: 1px solid var(--gray200); }
+    .db-link-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; border-bottom: 1px solid var(--gray200);
+      text-decoration: none; transition: all 0.15s;
+    }
+    .db-link-item:hover .db-link-phrase { color: var(--navy); }
+    .db-link-item:hover .db-link-arrow  { color: var(--blue); transform: translate(3px, -3px); }
+    .db-link-left { display: flex; align-items: baseline; gap: 14px; }
+    .db-link-num  { font-family: var(--font-mono); font-size: 10px; color: var(--gray300); min-width: 20px; }
+    .db-link-phrase { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--gray400); transition: color 0.2s; }
+    .db-link-arrow  { font-size: 16px; color: var(--gray300); transition: color 0.2s, transform 0.2s; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <nav class="db-nav">
+    <a href="index.html" class="db-logo">DB<span>_</span></a>
+    <div class="db-nav-right">
+      <div class="db-lang">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="pt">PT</button>
+      </div>
+      <div class="db-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+    <div class="db-drawer" id="drawer">
+      <a href="skills.html"><span class="db-drawer-num">01</span><span data-i18n="nav.skills">My Skills</span></a>
+      <a href="services.html"><span class="db-drawer-num">02</span><span data-i18n="nav.services">How can I help you?</span></a>
+      <a href="portfolio.html"><span class="db-drawer-num">03</span><span data-i18n="nav.portfolio">What I did.</span></a>
+      <a href="posts.html"><span class="db-drawer-num">04</span><span data-i18n="nav.posts">Posts</span></a>
+    </div>
+  </nav>
+
+  <div class="db-hero">
+    <p class="db-tag" data-i18n="home.role">Software Engineer</p>
+    <h1 class="db-title">
+      <span data-i18n="home.title1">Douglas</span><br>
+      <em data-i18n="home.title2">Barbosa.</em>
+    </h1>
+    <p class="db-subtitle">
+      <span data-i18n="home.subtitle1">Software is just the medium.</span><br>
+      <em data-i18n="home.subtitle2">What I'm really building is outcomes.</em>
+    </p>
+
+    <div class="db-links">
+      <a href="skills.html" class="db-link-item">
+        <div class="db-link-left">
+          <span class="db-link-num">01</span>
+          <span class="db-link-phrase" data-i18n="home.links.0.label">My Skills.</span>
+        </div>
+        <span class="db-link-arrow">↗</span>
+      </a>
+      <a href="services.html" class="db-link-item">
+        <div class="db-link-left">
+          <span class="db-link-num">02</span>
+          <span class="db-link-phrase" data-i18n="home.links.1.label">How can I help you?</span>
+        </div>
+        <span class="db-link-arrow">↗</span>
+      </a>
+      <a href="portfolio.html" class="db-link-item">
+        <div class="db-link-left">
+          <span class="db-link-num">03</span>
+          <span class="db-link-phrase" data-i18n="home.links.2.label">What I did.</span>
+        </div>
+        <span class="db-link-arrow">↗</span>
+      </a>
+      <a href="posts.html" class="db-link-item">
+        <div class="db-link-left">
+          <span class="db-link-num">04</span>
+          <span class="db-link-phrase" data-i18n="home.links.3.label">Posts.</span>
+        </div>
+        <span class="db-link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="db-footer">
+    <span class="db-footer-logo">DB<span>_</span></span>
+    <span class="db-footer-copy" data-i18n="footer.copy">© 2026 Douglas Barbosa</span>
+  </footer>
+
+</div>
+<script src="assets/i18n.js"></script>
+</body>
+</html>
