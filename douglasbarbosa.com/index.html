@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Douglas Barbosa — Full-stack engineer</title>
-<meta name="description" content="Full-stack engineer working in .NET, React and TypeScript. Brazilian, based in Dublin. Open to full-stack engineering roles across Europe, and to consulting work.">
-
+<title>Douglas Barbosa — Full-stack Software Engineer</title>
+<meta name="description" content="Full-stack Software Engineer with six years of experience building enterprise systems with .NET, React and TypeScript. Based in Dublin and open to opportunities across Europe.">
 <!-- avoids the flash of English before the language script runs -->
 <script>try{document.documentElement.classList.add('lang-pending')}catch(e){}</script>
 <style>.lang-pending body{visibility:hidden}</style>
@@ -16,7 +15,7 @@
 <!-- Open Graph: what LinkedIn shows when you post the link. The image must exist at this URL, 1200x630. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Douglas Barbosa">
-<meta property="og:title" content="Douglas Barbosa — Full-stack engineer">
+<meta property="og:title" content="Douglas Barbosa — Full-stack Software Engineer">
 <meta property="og:description" content="Software is just the medium. What I'm really building is outcomes.">
 <meta property="og:url" content="https://douglasbarbosa.com/">
 <meta property="og:image" content="https://douglasbarbosa.com/og-cover.png">
@@ -107,15 +106,111 @@ a{color:inherit}
 .name{font-size:clamp(2.1rem,8vw,3rem);line-height:1.04;font-weight:700;letter-spacing:-.025em;margin:22px 0 10px}
 .role{color:var(--slate);margin:0 0 22px;max-width:34ch}
 .role em{font-style:normal;color:var(--navy)}
+.availability{
+  font-family:var(--font-mono);
+  font-size:12px;
+  line-height:1.6;
+  color:var(--slate);
+  margin:0 0 22px;
+  max-width:36ch;
+}
 .tools{display:flex;align-items:center;gap:12px}
 .icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--navy);transition:border-color .15s,color .15s}
 .icon:hover{border-color:var(--accent);color:var(--accent)}
 .icon svg{width:19px;height:19px;fill:currentColor}
 
+/* ---------- CV ---------- */
+.cv-link{
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:var(--card);
+  color:var(--navy);
+  text-decoration:none;
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:500;
+  transition:border-color .15s,color .15s;
+}
+
+.cv-link:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
 /* ---------- statement ---------- */
 .statement{font-size:clamp(1.35rem,5.2vw,2.1rem);line-height:1.25;letter-spacing:-.02em;max-width:20ch;margin:0 0 14px}
 .statement span{color:var(--slate)}
 .statement-sub{color:var(--slate);max-width:var(--measure);margin:0}
+
+/* ---------- impacts section ---------- */
+.impact{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:28px 0 0;
+}
+
+.impact-item{
+  border-top:2px solid var(--navy);
+  padding-top:12px;
+}
+
+.impact-number{
+  display:block;
+  font-size:1.65rem;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-.03em;
+  margin-bottom:7px;
+}
+
+.impact-label{
+  display:block;
+  color:var(--slate);
+  font-size:.82rem;
+  line-height:1.4;
+}
+
+@media (max-width:520px){
+  .impact{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+}
+
+/* ---------- project stack ---------- */
+.project-stack{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--slate);
+  margin:0 0 12px;
+}
+
+/* ---------- contact links ---------- */
+.contact-links{
+  display:flex;
+  gap:18px;
+  margin-top:18px;
+  font-family:var(--font-mono);
+  font-size:13px;
+}
+
+.contact-links a{
+  color:var(--slate);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  padding-bottom:2px;
+}
+
+.contact-links a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
 
 /* ---------- sections ---------- */
 section{margin-top:64px;scroll-margin-top:20px}
@@ -190,20 +285,29 @@ p{max-width:var(--measure)}
     <h1 class="name">Douglas<br>Barbosa</h1>
 
     <p class="role"
-       data-en="Full-stack engineer. <em>.NET, React, TypeScript.</em> Brazilian, living in Dublin."
-       data-pt="Engenheiro full-stack. <em>.NET, React, TypeScript.</em> Brasileiro, morando em Dublin."
-       data-es="Ingeniero full-stack. <em>.NET, React, TypeScript.</em> Brasileño, afincado en Dublín."
-       data-de="Full-Stack Software Engineer. <em>.NET, React, TypeScript.</em> Brasilianer, lebe in Dublin.">
-       Full-stack engineer. <em>.NET, React, TypeScript.</em> Brazilian, living in Dublin.
+        data-en="Full-stack Software Engineer. <em>.NET, React, TypeScript.</em> Brazilian, living in Dublin."
+        data-pt="Engenheiro de Software Full-stack. <em>.NET, React, TypeScript.</em> Brasileiro, morando em Dublin."
+        data-es="Ingeniero de Software Full-stack. <em>.NET, React, TypeScript.</em> Brasileño, afincado en Dublín."
+        data-de="Full-Stack Software Engineer. <em>.NET, React, TypeScript.</em> Brasilianer, lebe in Dublin.">
+        Full-stack Software Engineer. <em>.NET, React, TypeScript.</em> Brazilian, living in Dublin.
+    </p>
+
+    <p class="availability"
+        data-en="Open to opportunities across Europe · Open to relocation"
+        data-pt="Aberto a oportunidades na Europa · Disponível para relocação"
+        data-es="Abierto a oportunidades en Europa · Disponible para reubicación"
+        data-de="Offen für Positionen in Europa · Umzugsbereit">
+        Open to opportunities across Europe · Open to relocation
     </p>
 
     <div class="tools">
-      <a class="icon" href="https://www.linkedin.com/in/douglas-dev/" aria-label="LinkedIn" rel="me">
+      <a class="icon" href="https://www.linkedin.com/in/douglasbarbosa-com/" aria-label="LinkedIn" rel="me">
         <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.6 8.65 22 11 22 14.4V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H9z"/></svg>
       </a>
       <a class="icon" href="https://github.com/douglassbarbosa" aria-label="GitHub" rel="me">
         <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
       </a>
+      <a class="cv-link" href="/Douglas-Barbosa-Software-Engineer.pdf" target="_blank" rel="noopener">CV</a>
     </div>
   </header>
 
@@ -225,37 +329,74 @@ p{max-width:var(--measure)}
          data-de="Sechs Jahre Erfahrung mit Unternehmenssystemen, meist nah an den Menschen, die sie nutzen.">
          Six years building enterprise systems, most of them close to the people who use them.
       </p>
+
+      <div class="impact" role="group" aria-label="Selected professional impact">
+        <div class="impact-item">
+            <span class="impact-number">1M+</span>
+            <span class="impact-label"
+                data-en="daily transactions on enterprise systems"
+                data-pt="transações diárias em sistemas corporativos"
+                data-es="transacciones diarias en sistemas empresariales"
+                data-de="tägliche Transaktionen in Unternehmenssystemen">
+            daily transactions on enterprise systems
+            </span>
+        </div>
+
+        <div class="impact-item">
+            <span class="impact-number">~27</span>
+            <span class="impact-label"
+                data-en="systems & APIs included in a security refactor"
+                data-pt="sistemas e APIs incluídos em uma refatoração de segurança"
+                data-es="sistemas y APIs incluidos en una refactorización de seguridad"
+                data-de="Systeme und APIs in der Sicherheitsrefaktorisierung">
+            systems & APIs included in a security refactor
+            </span>
+        </div>
+
+        <div class="impact-item">
+            <span class="impact-number">90%</span>
+            <span class="impact-label"
+                data-en="reduction in L3 support ticket backlog"
+                data-pt="redução na fila de chamados do suporte N3"
+                data-es="reducción en la cola de tickets de soporte de nivel 3"
+                data-de="Reduzierung der Ticket-Backlog im 3rd-Level-Support">
+                reduction in the L3 support ticket queue
+            </span>
+        </div>
+
+      </div>
     </section>
 
     <section class="bio">
       <h2 data-en="Who I am" data-pt="Quem eu sou" data-es="Quién soy" data-de="Wer ich bin">Who I am</h2>
 
-      <p data-en="I got into tech in 2011, in infrastructure and support, and spent years on the product side, first managing vendors and later as Product Owner of a language-learning platform. Moving into engineering, in 2020, was a planned step, not an accident. What I gained from it is hard to teach: I know what code does to a business once it ships. That still shapes how I pick what to build first."
+      <p data-en="I got into tech in 2011, in infrastructure and support, and spent years on the product side, first managing vendors and later as Product Owner of a language-learning platform. Moving into software engineering in 2020 was a planned step, not an accident. What I gained from it is hard to teach: I know what code does to a business once it ships. That still shapes how I pick what to build first."
         data-pt="Comecei em tecnologia em 2011, com infraestrutura e suporte, e passei anos do lado de produto, primeiro acompanhando fornecedores e depois como Product Owner de uma plataforma de ensino de idiomas. A virada para engenharia, em 2020, foi planejada, não acidental. O que ganhei com isso é difícil de ensinar: eu entendo o que o código faz com o negócio depois que entra no ar. Isso ainda define o que eu escolho construir primeiro."
         data-es="Empecé en tecnología en 2011, en infraestructura y soporte, y pasé años del lado de producto, primero gestionando proveedores y después como Product Owner de una plataforma de enseñanza de idiomas. Pasar a la ingeniería, en 2020, fue un paso planificado, no un accidente. Lo que gané con eso es difícil de enseñar: sé lo que el código le hace a un negocio una vez que sale a producción. Eso sigue definiendo qué elijo construir primero."
         data-de="In die IT bin ich 2011 über Infrastruktur und Support eingestiegen und habe danach Jahre auf der Produktseite verbracht, zunächst in der Steuerung von Dienstleistern, später als Product Owner einer Sprachlernplattform. Der Wechsel in die Softwareentwicklung 2020 war ein geplanter Schritt, kein Zufall. Was ich dabei gewonnen habe, lässt sich schwer vermitteln: Ich weiß, was Code im Unternehmen bewirkt, sobald er live ist. Das bestimmt bis heute, was ich zuerst baue.">
-        I got into tech in 2011, in infrastructure and support, and spent years on the product side, first managing vendors and later as Product Owner of a language-learning platform. Moving into engineering, in 2020, was a planned step, not an accident. What I gained from it is hard to teach: I know what code does to a business once it ships. That still shapes how I pick what to build first.
+        I got into tech in 2011, in infrastructure and support, and spent years on the product side, first managing vendors and later as Product Owner of a language-learning platform. Moving into software engineering in 2020 was a planned step, not an accident. What I gained from it is hard to teach: I know what code does to a business once it ships. That still shapes how I pick what to build first.
       </p>
 
-      <p data-en="I spent almost five years at Funcional Health Tech, on systems where downtime was not an abstract problem: authentication, authorization and sales transaction APIs handling over a million requests a day. I took part in the security refactor of around 27 systems and APIs, and helped level-3 support cut its ticket queue by 90%. As a senior engineer I mentored developers, designed solutions alongside POs and architects, and followed every delivery through to well after it went live."
-        data-pt="Passei quase cinco anos na Funcional Health Tech, em sistemas onde indisponibilidade não era um problema abstrato: APIs de autenticação, autorização e transações de venda com mais de 1 milhão de requisições por dia. Participei da refatoração de segurança de cerca de 27 sistemas e APIs e ajudei o suporte N3 a reduzir a fila de chamados em 90%. Como sênior, mentorei desenvolvedores, desenhei soluções junto a POs e arquitetos e acompanhei cada entrega até depois de ir para produção."
-        data-es="Pasé casi cinco años en Funcional Health Tech, en sistemas donde una caída no era un problema abstracto: APIs de autenticación, autorización y transacciones de venta con más de un millón de peticiones al día. Participé en la refactorización de seguridad de unos 27 sistemas y APIs y ayudé al soporte de nivel 3 a reducir su cola de tickets en un 90%. Como sénior, mentoricé a desarrolladores, diseñé soluciones junto a POs y arquitectos y acompañé cada entrega hasta mucho después de su publicación."
-        data-de="Fast fünf Jahre war ich bei Funcional Health Tech, an Systemen, bei denen Ausfallzeiten kein abstraktes Problem waren: APIs für Authentifizierung, Autorisierung und Verkaufstransaktionen mit über einer Million Anfragen pro Tag. Ich war am Security-Refactoring von rund 27 Systemen und APIs beteiligt und habe dem 3rd-Level-Support geholfen, seine Ticket-Warteschlange um 90 % zu reduzieren. Als Senior habe ich Entwickler gementort, Lösungen gemeinsam mit POs und Architekten entworfen und jede Auslieferung bis weit nach dem Go-live begleitet.">
-        I spent almost five years at Funcional Health Tech, on systems where downtime was not an abstract problem: authentication, authorization and sales transaction APIs handling over a million requests a day. I took part in the security refactor of around 27 systems and APIs, and helped level-3 support cut its ticket queue by 90%. As a senior engineer I mentored developers, designed solutions alongside POs and architects, and followed every delivery through to well after it went live.
+      <p data-en="I spent almost five years at Funcional Health Tech, on systems where downtime was not an abstract problem: authentication, authorization and sales transaction APIs handling over a million requests a day. I took part in the security refactor of around 27 systems and APIs, and helped level-3 support cut its ticket queue by 90%. I mentored developers, designed solutions alongside POs and architects, and followed deliveries through production and post-release support."
+        data-pt="Passei quase cinco anos na Funcional Health Tech, em sistemas onde indisponibilidade não era um problema abstrato: APIs de autenticação, autorização e transações de venda com mais de 1 milhão de requisições por dia. Participei da refatoração de segurança de cerca de 27 sistemas e APIs e ajudei o suporte N3 a reduzir a fila de chamados em 90%. Mentorei desenvolvedores, desenhei soluções junto a POs e arquitetos e acompanhei cada entrega até depois de ir para produção."
+        data-es="Pasé casi cinco años en Funcional Health Tech, en sistemas donde una caída no era un problema abstracto: APIs de autenticación, autorización y transacciones de venta con más de un millón de peticiones al día. Participé en la refactorización de seguridad de unos 27 sistemas y APIs y ayudé al soporte de nivel 3 a reducir su cola de tickets en un 90%. Mentoricé a desarrolladores, diseñé soluciones junto a POs y arquitectos y acompañé cada entrega hasta mucho después de su publicación."
+        data-de="Fast fünf Jahre war ich bei Funcional Health Tech, an Systemen, bei denen Ausfallzeiten kein abstraktes Problem waren: APIs für Authentifizierung, Autorisierung und Verkaufstransaktionen mit über einer Million Anfragen pro Tag. Ich war am Security-Refactoring von rund 27 Systemen und APIs beteiligt und habe dem 3rd-Level-Support geholfen, seine Ticket-Warteschlange um 90 % zu reduzieren. Ich habe Entwickler gementort, Lösungen gemeinsam mit POs und Architekten entworfen und jede Auslieferung bis weit nach dem Go-live begleitet.">
+        I spent almost five years at Funcional Health Tech, on systems where downtime was not an abstract problem: authentication, authorization and sales transaction APIs handling over a million requests a day. I took part in the security refactor of around 27 systems and APIs, and helped level-3 support cut its ticket queue by 90%. I mentored developers, designed solutions alongside POs and architects, and followed deliveries through production and post-release support.
       </p>
 
-      <p data-en="Since 2025 I have worked as a freelance software engineering consultant, as a developer, tech lead or advisor depending on the project. Mostly C#/.NET on the back end and React with TypeScript on the front. I hold a BSc in Information Systems from UFF."
-        data-pt="Desde 2025 trabalho como consultor freelancer de engenharia de software, como desenvolvedor, tech lead ou consultor, conforme o projeto. Uso principalmente C#/.NET no back-end e React com TypeScript no front. Sou bacharel em Sistemas de Informação pela UFF."
-        data-es="Desde 2025 trabajo como consultor freelance de ingeniería de software, como desarrollador, tech lead o consultor según el proyecto. Principalmente C#/.NET en el back-end y React con TypeScript en el front. Soy licenciado en Sistemas de Información por la UFF."
-        data-de="Seit 2025 arbeite ich als freiberuflicher Software-Engineering-Berater, je nach Projekt als Entwickler, Tech Lead oder Berater. Vor allem mit C#/.NET im Backend und React mit TypeScript im Frontend. Ich habe einen Bachelor of Science in Information Systems der UFF (Brasilien).">
-        Since 2025 I have worked as a freelance software engineering consultant, as a developer, tech lead or advisor depending on the project. Mostly C#/.NET on the back end and React with TypeScript on the front. I hold a BSc in Information Systems from UFF.
+
+      <p data-en="Since 2025 I have worked independently on software engineering projects, primarily building with C#/.NET on the back end and React with TypeScript on the front. Depending on the project, my work spans implementation, technical decisions and product guidance. I hold a BSc in Information Systems from UFF."
+        data-pt="Desde 2025 trabalho de forma independente em projetos de engenharia de software, principalmente com C#/.NET no back-end e React com TypeScript no front. Dependendo do projeto, meu trabalho envolve implementação, decisões técnicas e orientação de produto. Sou bacharel em Sistemas de Informação pela UFF."
+        data-es="Desde 2025 trabajo de forma independiente en proyectos de ingeniería de software, principalmente con C#/.NET en el back-end y React con TypeScript en el front. Según el proyecto, mi trabajo abarca implementación, decisiones técnicas y orientación de producto. Soy licenciado en Sistemas de Información por la UFF."
+        data-de="Seit 2025 arbeite ich selbstständig an Software-Engineering-Projekten, hauptsächlich mit C#/.NET im Backend sowie React und TypeScript im Frontend. Je nach Projekt umfasst meine Arbeit Implementierung, technische Entscheidungen und produktbezogene Beratung. Ich habe einen Bachelor of Science in Information Systems der UFF in Brasilien.">
+        Since 2025 I have worked independently on software engineering projects, primarily building with C#/.NET on the back end and React with TypeScript on the front. Depending on the project, my work spans implementation, technical decisions and product guidance. I hold a BSc in Information Systems from UFF.
       </p>
 
-      <p data-en="I have worked remotely from a different country every few months since 2022. Right now that country is Ireland. It taught me to write things down, hand work over cleanly, and never assume the other person is in my timezone."
-        data-pt="Trabalho remoto de um país diferente a cada poucos meses desde 2022. No momento, esse país é a Irlanda. Isso me ensinou a documentar, a passar trabalho adiante de forma limpa e a nunca supor que a outra pessoa está no meu fuso."
-        data-es="Desde 2022 trabajo en remoto desde un país distinto cada pocos meses. Ahora mismo ese país es Irlanda. Eso me enseñó a documentar, a entregar el trabajo de forma limpia y a no dar nunca por hecho que la otra persona está en mi zona horaria."
-        data-de="Seit 2022 arbeite ich remote, alle paar Monate aus einem anderen Land. Im Moment ist das Irland. Dabei habe ich gelernt, Dinge schriftlich festzuhalten, Arbeit sauber zu übergeben und nie davon auszugehen, dass mein Gegenüber in meiner Zeitzone ist.">
-        I have worked remotely from a different country every few months since 2022. Right now that country is Ireland. It taught me to write things down, hand work over cleanly, and never assume the other person is in my timezone.
+      <p data-en="Working remotely across different countries since 2022 has made distributed collaboration a normal part of how I work. It taught me to document decisions, hand work over cleanly, communicate asynchronously and never assume the other person is in my timezone. I am currently based in Dublin, Ireland."
+        data-pt="Trabalhar remotamente em diferentes países desde 2022 tornou a colaboração distribuída uma parte natural da minha forma de trabalhar. Isso me ensinou a documentar decisões, fazer handovers de forma clara, comunicar de maneira assíncrona e nunca assumir que a outra pessoa está no meu fuso horário. Atualmente moro em Dublin, Irlanda."
+        data-es="Trabajar en remoto desde distintos países desde 2022 ha hecho que la colaboración distribuida sea una parte natural de mi forma de trabajar. Me enseñó a documentar decisiones, entregar el trabajo de forma clara, comunicarme de manera asíncrona y no asumir que la otra persona está en mi zona horaria. Actualmente vivo en Dublín, Irlanda."
+        data-de="Die Remote-Arbeit aus verschiedenen Ländern seit 2022 hat verteilte Zusammenarbeit zu einem selbstverständlichen Teil meiner Arbeitsweise gemacht. Dabei habe ich gelernt, Entscheidungen zu dokumentieren, Arbeit sauber zu übergeben, asynchron zu kommunizieren und nie davon auszugehen, dass mein Gegenüber in meiner Zeitzone ist. Derzeit lebe ich in Dublin, Irland.">
+        Working remotely across different countries since 2022 has made distributed collaboration a normal part of how I work. It taught me to document decisions, hand work over cleanly, communicate asynchronously and never assume the other person is in my timezone. I am currently based in Dublin, Ireland.
       </p>
     </section>
 
@@ -265,6 +406,7 @@ p{max-width:var(--measure)}
         <li data-core>C# / .NET</li>
         <li data-core>React</li>
         <li data-core>TypeScript</li>
+        <li data-core>REST APIs</li>
         <li>Node.js</li>
         <li>SQL Server</li>
         <li>CI/CD</li>
@@ -283,30 +425,54 @@ p{max-width:var(--measure)}
     </section>
 
     <section>
-      <h2 data-en="What's live" data-pt="No ar" data-es="En línea" data-de="Online">What's live</h2>
+      <h2
+        data-en="Selected work"
+        data-pt="Projetos selecionados"
+        data-es="Proyectos seleccionados"
+        data-de="Ausgewählte Projekte">
+        Selected work
+      </h2>
       <ul class="live">
         <li>
-          <h3>ThreeTone English</h3>
-          <p data-en="An English practice tool built in Next.js. Every sentence you write comes back corrected for grammar and spelling, in three versions — informal, normal and formal — so learners can see how the same idea is said in different situations."
-            data-pt="Uma ferramenta de prática de inglês feita em Next.js. Cada frase que você escreve volta corrigida na gramática e na ortografia, em três versões — informal, normal e formal — para quem está aprendendo ver como a mesma ideia é dita em situações diferentes."
-            data-es="Una herramienta para practicar inglés hecha en Next.js. Cada frase que escribes vuelve corregida en gramática y ortografía, en tres versiones — informal, normal y formal — para que quien aprende vea cómo se dice la misma idea en distintas situaciones."
-            data-de="Ein Tool zum Englischüben, gebaut mit Next.js. Jeder Satz, den man schreibt, kommt in Grammatik und Rechtschreibung korrigiert zurück, und zwar in drei Varianten — informell, normal und formell — damit Lernende sehen, wie sich dieselbe Aussage je nach Situation ausdrückt.">
-            An English practice tool built in Next.js. Every sentence you write comes back corrected for grammar and spelling, in three versions — informal, normal and formal — so learners can see how the same idea is said in different situations.
-          </p>
-          <div class="links">
-            <!-- TODO: URL do app -->
-            <a href="https://english-gpt-tips.vercel.app/" data-en="Open the app" data-pt="Abrir o app" data-es="Abrir la app" data-de="App öffnen">Open the app</a>
-            <!-- TODO: URL do repositório -->
-            <a href="https://github.com/douglassbarbosa/english-gpt-tips" data-en="Source" data-pt="Código" data-es="Código" data-de="Quellcode">Source</a>
-          </div>
+            <h3>ThreeTone English</h3>
+
+            <p
+                data-en="An English practice tool that rewrites a sentence in informal, neutral and formal English while correcting grammar and spelling. Built with Next.js and TypeScript, integrating the OpenAI API for language transformation. and production deployment on Vercel."
+                data-pt="Uma ferramenta de prática de inglês que reescreve uma frase em inglês informal, neutro e formal, corrigindo gramática e ortografia. Desenvolvida com Next.js e TypeScript, integrando a API da OpenAI para transformação de linguagem e publicação em produção na Vercel."
+                data-es="Una herramienta para practicar inglés que reescribe una frase en inglés informal, neutro y formal mientras corrige gramática y ortografía. Desarrollada con Next.js y TypeScript, integrando la API de OpenAI para la transformación del lenguaje y el despliegue en producción en Vercel."
+                data-de="Ein Tool zum Englischüben, das einen Satz in informelles, neutrales und formelles Englisch umschreibt und dabei Grammatik und Rechtschreibung korrigiert. Entwickelt mit Next.js und TypeScript, unter Einbindung der OpenAI-API für Sprachtransformation und Bereitstellung in der Produktion auf Vercel.">
+                An English practice tool that rewrites a sentence in informal, neutral and formal English while correcting grammar and spelling. Built with Next.js and TypeScript, integrating the OpenAI API for language transformation. and production deployment on Vercel.
+            </p>
+
+            <div class="project-stack">
+                Next.js · TypeScript · OpenAI API · Vercel
+            </div>
+
+            <div class="links">
+                <a href="https://english-gpt-tips.vercel.app/"
+                data-en="Live"
+                data-pt="Abrir"
+                data-es="Abrir"
+                data-de="Live">
+                Live
+                </a>
+
+                <a href="https://github.com/douglassbarbosa/english-gpt-tips"
+                data-en="Source"
+                data-pt="Código"
+                data-es="Código"
+                data-de="Quellcode">
+                Source
+                </a>
+            </div>
         </li>
         <li>
           <h3>douglasbarbosa.com</h3>
-          <p data-en="This site. Hand-built, no framework, deployed from a GitHub Action on push."
-             data-pt="Este site. Feito na mão, sem framework, publicado por uma GitHub Action a cada push."
-             data-es="Este sitio. Hecho a mano, sin framework, publicado con una GitHub Action en cada push."
-             data-de="Diese Website. Von Hand gebaut, ohne Framework, bei jedem Push per GitHub Action deployt.">
-             This site. Hand-built, no framework, deployed from a GitHub Action on push.
+          <p data-en="This portfolio. Hand-built without a framework, responsive across screen sizes and available in four languages. Changes are deployed automatically through GitHub Actions on push."
+             data-pt="Este portfólio. Feito à mão, sem framework, responsivo em diferentes tamanhos de tela e disponível em quatro idiomas. As alterações são publicadas automaticamente por GitHub Actions a cada push."
+             data-es="Este portafolio. Hecho a mano, sin framework, responsivo en diferentes tamaños de pantalla y disponible en cuatro idiomas. Los cambios se publican automáticamente mediante GitHub Actions en cada push."
+             data-de="Dieses Portfolio. Von Hand gebaut, ohne Framework, responsiv auf allen Bildschirmgrößen und in vier Sprachen verfügbar. Änderungen werden bei jedem Push automatisch über GitHub Actions bereitgestellt.">
+             This portfolio. Hand-built without a framework, responsive across screen sizes and available in four languages. Changes are deployed automatically through GitHub Actions on push.
           </p>
           <div class="links"> 
             <a href="https://github.com/douglassbarbosa/douglasbarbosa/" data-en="Source" data-pt="Código" data-es="Código" data-de="Quellcode">Source</a>
@@ -325,7 +491,7 @@ p{max-width:var(--measure)}
            data-de="Auf LinkedIn schreibe ich über .NET für Entwicklerinnen und Entwickler am Anfang ihrer Laufbahn, darüber, was freiberufliche Beratung tatsächlich bedeutet, und darüber, wie es funktioniert, alle paar Monate aus einem neuen Land zu leben und zu arbeiten.">
            I write on LinkedIn about .NET for developers early in their career, what freelance consulting actually involves, and how it works to live and work from a new country every few months.
         </p>
-        <a class="btn" href="https://www.linkedin.com/in/douglas-dev/"
+        <a class="btn" href="https://www.linkedin.com/in/douglasbarbosa-com/"
            data-en="Read on LinkedIn" data-pt="Ler no LinkedIn" data-es="Leer en LinkedIn" data-de="Auf LinkedIn lesen">Read on LinkedIn</a>
       </div>
     </section> -->
@@ -338,7 +504,27 @@ p{max-width:var(--measure)}
         data-de="Offen für Full-Stack-Positionen in ganz Europa — vor Ort, hybrid oder remote — sowie für Beratungsprojekte. Für das richtige Team ziehe ich gern um.">
         Open to full-stack engineering roles across Europe — on site, hybrid or remote — and to consulting work. Happy to relocate for the right team.
       </p>
-      <p><a class="mail" href="mailto:dev@douglasbarbosa.com">dev@douglasbarbosa.com</a></p>
+      <p>
+        <a class="mail" href="mailto:dev@douglasbarbosa.com">
+            dev@douglasbarbosa.com
+        </a>
+        </p>
+
+        <div class="contact-links">
+        <a href="https://www.linkedin.com/in/douglasbarbosa-com/">
+            LinkedIn
+        </a>
+
+        <!-- <a href="/Douglas-Barbosa-Software-Engineer.pdf"
+            target="_blank"
+            rel="noopener"
+            data-en="View CV"
+            data-pt="Ver CV"
+            data-es="Ver CV"
+            data-de="CV ansehen">
+            View CV
+        </a> -->
+        </div>
     </section>
 
   </main>
@@ -352,20 +538,20 @@ p{max-width:var(--measure)}
 
   var META = {
     en: {
-      title: "Douglas Barbosa — Full-stack engineer",
-      desc:  "Full-stack engineer working in .NET, React and TypeScript. Brazilian, based in Dublin. Open to full-stack engineering roles across Europe, and to consulting work."
+      title: "Douglas Barbosa — Full-stack Software Engineer",
+      desc: "Full-stack Software Engineer with six years of experience building enterprise systems with .NET, React and TypeScript. Based in Dublin and open to opportunities across Europe."
     },
     pt: {
-      title: "Douglas Barbosa — Engenheiro full-stack",
-      desc:  "Engenheiro full-stack com .NET, React e TypeScript. Brasileiro, morando em Dublin. Aberto a vagas de engenharia full-stack na Europa e a trabalhos de consultoria."
+      title: "Douglas Barbosa — Engenheiro de Software Full-stack",
+      desc: "Engenheiro de Software Full-stack com seis anos de experiência em sistemas corporativos usando .NET, React e TypeScript. Baseado em Dublin e aberto a oportunidades na Europa."
     },
     es: {
-      title: "Douglas Barbosa — Ingeniero full-stack",
-      desc:  "Ingeniero full-stack con .NET, React y TypeScript. Brasileño, afincado en Dublín. Abierto a puestos de ingeniería full-stack en Europa y a trabajos de consultoría."
+      title: "Douglas Barbosa — Ingeniero de Software Full-stack",
+      desc: "Ingeniero de Software Full-stack con seis años de experiencia en sistemas empresariales con .NET, React y TypeScript. Residente en Dublín y abierto a oportunidades en Europa."
     },
     de: {
       title: "Douglas Barbosa — Full-Stack Software Engineer",
-      desc:  "Full-Stack Software Engineer mit .NET, React und TypeScript. Brasilianer, lebt in Dublin. Offen für Full-Stack-Positionen in Europa und für Beratungsprojekte."
+      desc:  "Full-Stack Software Engineer mit sechs Jahren Erfahrung in Unternehmenssystemen mit .NET, React und TypeScript. Lebt in Dublin und ist offen für Positionen in Europa."
     }
   };
 
