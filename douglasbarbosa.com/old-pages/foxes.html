@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Are Foxes Becoming Domesticated? | English B2 Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7ec;
+    --bg-2: #f3ecd8;
+    --ink: #2d3a24;
+    --ink-soft: #4a5a3a;
+    --rust: #c9512a;
+    --rust-deep: #9a3a18;
+    --rust-light: #e88a5e;
+    --moss: #6b7a3a;
+    --gold: #d9a441;
+    --cream: #fdfbf2;
+    --accent: #7d2eb3;
+    --accent-glow: #c026d3;
+    --shadow: rgba(80, 50, 20, 0.15);
+
+    /* Fluid type scale */
+    --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+    --fs-sm: clamp(0.85rem, 0.8rem + 0.3vw, 0.95rem);
+    --fs-base: clamp(0.95rem, 0.9rem + 0.4vw, 1.1rem);
+    --fs-md: clamp(1.05rem, 1rem + 0.5vw, 1.25rem);
+    --fs-lg: clamp(1.2rem, 1.1rem + 0.7vw, 1.5rem);
+    --fs-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --fs-2xl: clamp(1.8rem, 1.5rem + 1.5vw, 2.8rem);
+    --fs-3xl: clamp(2.2rem, 1.8rem + 2.5vw, 4rem);
+    --fs-display: clamp(2.8rem, 2rem + 4vw, 6rem);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: 'ss01', 'ss02';
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(217, 164, 65, 0.08), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 80% 90%, rgba(201, 81, 42, 0.06), transparent 60%),
+      var(--bg);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Subtle paper grain */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.15 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============ SLIDE CONTAINER ============ */
+  .deck {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 3;
+  }
+
+  .slide {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px) clamp(120px, 15vh, 140px);
+    flex-direction: column;
+    position: relative;
+    animation: rise 0.7s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  .slide.active {
+    display: flex;
+  }
+
+  .slide .anim {
+    animation: rise 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .slide .anim-1 { animation-delay: 0.05s; }
+  .slide .anim-2 { animation-delay: 0.2s; }
+  .slide .anim-3 { animation-delay: 0.35s; }
+  .slide .anim-4 { animation-delay: 0.5s; }
+  .slide .anim-5 { animation-delay: 0.65s; }
+  .slide .anim-6 { animation-delay: 0.8s; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============ TITLE BAR (shared) ============ */
+  .title-bar {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-3xl);
+    color: var(--moss);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: clamp(16px, 3vh, 30px);
+    font-weight: 700;
+  }
+  .title-bar .dot {
+    color: var(--rust);
+  }
+
+  /* ============ SLIDE 1: COVER ============ */
+  .cover {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .cover-title {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-display);
+    color: var(--moss);
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: clamp(15px, 3vh, 30px);
+    padding: 0 10px;
+  }
+  .cover-meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: var(--fs-md);
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: clamp(20px, 4vh, 50px);
+  }
+  .cover-meta span {
+    display: block;
+  }
+  .cover-meta .author {
+    font-weight: 600;
+    font-style: normal;
+    color: var(--rust-deep);
+    font-size: var(--fs-lg);
+    margin: 6px 0;
+  }
+  .cover-illustration {
+    width: min(85vw, 480px);
+    filter: drop-shadow(0 12px 24px var(--shadow));
+  }
+
+  /* ============ SLIDE 2: HOOK ============ */
+  .hook-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 4vw, 60px);
+    align-items: center;
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hook-left, .hook-right {
+    min-width: 0;
+  }
+  .hook-right {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 3vh, 30px);
+  }
+
+  .hook-image-card {
+    position: relative;
+    background: var(--cream);
+    padding: 12px 12px 16px;
+    border-radius: 4px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.08),
+      0 18px 40px var(--shadow);
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease;
+  }
+  .hook-image-card:hover {
+    transform: rotate(-1deg) scale(1.02);
+  }
+  .hook-image-card svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+  .hook-image-caption {
+    font-family: 'Caveat', cursive;
+    text-align: center;
+    margin-top: 8px;
+    font-size: var(--fs-md);
+    color: var(--ink-soft);
+  }
+
+  .hook-question {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-lg);
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: clamp(15px, 2vh, 25px);
+  }
+  .hook-question em {
+    color: var(--rust-deep);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .video-btn {
+    align-self: flex-start;
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-2xl);
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 24px;
+    position: relative;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-glow);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+  }
+  .video-btn::before {
+    content: "▶";
+    margin-right: 10px;
+    font-size: 0.7em;
+    color: var(--accent-glow);
+  }
+  .video-btn:hover {
+    color: var(--accent-glow);
+    transform: translateX(4px);
+  }
+
+  /* ============ SLIDE 3: DEFINITION ============ */
+  .definition {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .definition-content {
+    max-width: 900px;
+    width: 100%;
+  }
+  .definition-q {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-2xl);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--rust-deep);
+    margin-bottom: clamp(15px, 3vh, 30px);
+    line-height: 1.2;
+  }
+  .definition-text {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-md);
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: clamp(20px, 3vh, 35px);
+  }
+  .definition-checklist {
+    display: flex;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 30px);
+    flex-wrap: wrap;
+    margin: clamp(20px, 3vh, 30px) 0;
+  }
+  .check-card {
+    background: var(--cream);
+    border: 2px solid var(--moss);
+    border-radius: 18px;
+    padding: clamp(16px, 3vw, 24px) clamp(20px, 3vw, 32px);
+    min-width: clamp(140px, 25vw, 200px);
+    box-shadow: 4px 4px 0 var(--moss);
+    transition: all 0.3s ease;
+  }
+  .check-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--moss);
+  }
+  .check-card .icon {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 6px;
+  }
+  .check-card .label {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-lg);
+    color: var(--moss);
+    font-weight: 700;
+  }
+  .definition-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: var(--fs-lg);
+    color: var(--rust-deep);
+    margin-top: 20px;
+    position: relative;
+    padding: 20px clamp(30px, 6vw, 50px);
+  }
+  .definition-quote::before,
+  .definition-quote::after {
+    content: """;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--rust-light);
+    position: absolute;
+    line-height: 1;
+  }
+  .definition-quote::before { left: 0; top: 0; }
+  .definition-quote::after { content: """; right: 0; bottom: -10px; }
+  .definition-source {
+    display: block;
+    margin-top: 12px;
+    font-size: var(--fs-sm);
+    color: var(--ink-soft);
+    font-style: normal;
+  }
+
+  /* ============ SLIDE 4: ALERT ============ */
+  .alert-slide {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .alert-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--rust);
+    color: var(--cream);
+    padding: 12px clamp(20px, 4vw, 36px);
+    border-radius: 50px;
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: var(--fs-lg);
+    letter-spacing: 2px;
+    margin-bottom: clamp(20px, 3vh, 35px);
+    box-shadow: 0 8px 20px rgba(201, 81, 42, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+  .alert-icon {
+    font-size: var(--fs-xl);
+  }
+  .alert-quote {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-xl);
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 850px;
+    margin: 0 auto clamp(20px, 3vh, 30px);
+  }
+  .alert-quote em {
+    color: var(--rust-deep);
+    font-weight: 600;
+  }
+  .alert-source {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-base);
+    color: var(--ink-soft);
+    font-style: normal;
+    border-top: 2px dashed var(--moss);
+    padding-top: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .alert-source strong {
+    color: var(--rust-deep);
+  }
+
+  /* ============ SLIDE 5: FACTS ============ */
+  .facts {
+    align-items: center;
+  }
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 3vw, 40px);
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+  }
+  .fact-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: clamp(20px, 3vw, 32px);
+    box-shadow: 0 8px 24px var(--shadow);
+    border-left: 6px solid var(--rust);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .fact-card:hover {
+    transform: translateY(-6px);
+  }
+  .fact-card:nth-child(2) {
+    border-left-color: var(--moss);
+  }
+  .fact-stat {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 800;
+    color: var(--rust-deep);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .fact-card:nth-child(2) .fact-stat {
+    color: var(--moss);
+  }
+  .fact-stat sup {
+    font-size: 0.5em;
+    vertical-align: top;
+    margin-left: 4px;
+  }
+  .fact-text {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .fact-text strong {
+    color: var(--rust-deep);
+    font-weight: 600;
+  }
+  .fact-source {
+    margin-top: 14px;
+    font-size: var(--fs-sm);
+    color: var(--ink-soft);
+    font-style: italic;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 12px;
+  }
+
+  /* ============ SLIDE 6: STUDIES ============ */
+  .studies {
+    align-items: stretch;
+  }
+  .studies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(16px, 2vw, 30px);
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .study-card {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: clamp(20px, 3vw, 28px);
+    box-shadow: 0 6px 18px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .study-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--rust), var(--gold));
+  }
+  .study-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--moss), var(--rust));
+  }
+  .study-tag {
+    display: inline-block;
+    background: var(--rust);
+    color: var(--cream);
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: var(--fs-xs);
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+  .study-card:nth-child(2) .study-tag {
+    background: var(--moss);
+  }
+  .study-title {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .study-title em {
+    color: var(--rust-deep);
+    font-style: italic;
+  }
+  .study-body {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .study-highlight {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(217, 164, 65, 0.15);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    font-size: var(--fs-sm);
+    font-style: italic;
+    color: var(--ink);
+  }
+  .study-highlight strong {
+    color: var(--rust-deep);
+  }
+
+  /* ============ SLIDE 7: CONCLUSION ============ */
+  .conclusion {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .conclusion-q {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-2xl);
+    font-weight: 600;
+    color: var(--rust-deep);
+    margin-bottom: clamp(15px, 3vh, 30px);
+    line-height: 1.2;
+  }
+  .conclusion-answer {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-display);
+    color: var(--moss);
+    line-height: 1;
+    margin-bottom: clamp(15px, 3vh, 24px);
+  }
+  .conclusion-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 24px) clamp(20px, 4vw, 40px);
+    border-left: 4px solid var(--rust);
+    border-right: 4px solid var(--rust);
+    background: rgba(253, 251, 242, 0.6);
+    border-radius: 6px;
+  }
+  .conclusion-quote strong {
+    color: var(--rust-deep);
+  }
+
+  /* ============ SLIDE 8: VOCABULARY ============ */
+  .vocab {
+    align-items: stretch;
+  }
+  .vocab-intro {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    text-align: center;
+    color: var(--ink-soft);
+    margin-bottom: clamp(15px, 2vh, 20px);
+    font-size: var(--fs-base);
+  }
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(12px, 1.5vw, 16px);
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .vocab-card {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: clamp(16px, 2vw, 20px);
+    cursor: pointer;
+    position: relative;
+    min-height: 120px;
+    box-shadow: 0 4px 14px var(--shadow);
+    transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+    border: 2px solid transparent;
+  }
+  .vocab-card:hover {
+    border-color: var(--rust);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px var(--shadow);
+  }
+  .vocab-card.flipped {
+    background: linear-gradient(135deg, var(--rust) 0%, var(--rust-deep) 100%);
+    color: var(--cream);
+  }
+  .vocab-word {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--rust-deep);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .vocab-card.flipped .vocab-word {
+    color: var(--cream);
+  }
+  .vocab-card .flip-hint {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: var(--fs-xs);
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0.05);
+    padding: 3px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .vocab-card.flipped .flip-hint {
+    background: rgba(255,255,255,0.2);
+    color: var(--cream);
+  }
+  .vocab-definition {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-sm);
+    line-height: 1.4;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+  }
+  .vocab-card.flipped .vocab-definition {
+    opacity: 1;
+    max-height: 300px;
+    color: var(--cream);
+  }
+  .vocab-card .placeholder {
+    font-family: 'Caveat', cursive;
+    color: var(--ink-soft);
+    font-size: var(--fs-base);
+    margin-top: 6px;
+  }
+  .vocab-card.flipped .placeholder {
+    display: none;
+  }
+
+  /* ============ SLIDE 9: DISCUSSION ============ */
+  .discussion {
+    align-items: center;
+    justify-content: center;
+  }
+  .discussion-title {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-3xl);
+    color: var(--moss);
+    text-align: center;
+    margin-bottom: clamp(15px, 3vh, 30px);
+  }
+  .discussion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(16px, 2vw, 24px);
+    max-width: 1000px;
+    width: 100%;
+  }
+  .discussion-card {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: clamp(20px, 3vw, 28px);
+    box-shadow: 0 6px 18px var(--shadow);
+    position: relative;
+    transition: transform 0.3s ease;
+    border-left: 5px solid var(--gold);
+  }
+  .discussion-card:nth-child(2) { border-left-color: var(--rust); }
+  .discussion-card:nth-child(3) { border-left-color: var(--moss); }
+  .discussion-card:nth-child(4) { border-left-color: var(--accent); }
+
+  .discussion-card:hover {
+    transform: translateY(-4px);
+  }
+  .discussion-number {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-2xl);
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .discussion-card:nth-child(2) .discussion-number { color: var(--rust); }
+  .discussion-card:nth-child(3) .discussion-number { color: var(--moss); }
+  .discussion-card:nth-child(4) .discussion-number { color: var(--accent); }
+  .discussion-q {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-base);
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .discussion-q em {
+    color: var(--rust-deep);
+    font-style: italic;
+  }
+
+  /* ============ SLIDE 10: THANKS ============ */
+  .thanks {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .thanks-title {
+    font-family: 'Caveat', cursive;
+    font-size: var(--fs-display);
+    color: var(--rust-deep);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .thanks-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: var(--fs-lg);
+    color: var(--ink-soft);
+    margin-bottom: clamp(25px, 5vh, 50px);
+  }
+  .thanks-sources {
+    background: var(--cream);
+    padding: clamp(18px, 3vw, 24px) clamp(20px, 4vw, 40px);
+    border-radius: 12px;
+    box-shadow: 0 6px 16px var(--shadow);
+    max-width: 700px;
+    text-align: left;
+    width: 100%;
+  }
+  .thanks-sources h3 {
+    font-family: 'Fraunces', serif;
+    font-size: var(--fs-base);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--moss);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .thanks-sources li {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: var(--fs-xs);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+    word-break: break-all;
+  }
+  .thanks-sources li::before {
+    content: "🦊";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.85em;
+  }
+
+  /* ============ NAVIGATION ============ */
+  .nav {
+    position: fixed;
+    bottom: clamp(16px, 3vh, 24px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 14px);
+    background: rgba(253, 251, 242, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: clamp(8px, 1.5vw, 10px) clamp(14px, 2vw, 20px);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px var(--shadow);
+    z-index: 100;
+    border: 1px solid rgba(107, 122, 58, 0.2);
+  }
+  .nav-btn {
+    background: var(--moss);
+    color: var(--cream);
+    border: none;
+    width: clamp(36px, 5vw, 42px);
+    height: clamp(36px, 5vw, 42px);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--fs-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-family: 'Inter Tight', sans-serif;
+    flex-shrink: 0;
+  }
+  .nav-btn:hover:not(:disabled) {
+    background: var(--rust);
+    transform: scale(1.08);
+  }
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .nav-counter {
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+    font-size: var(--fs-base);
+    min-width: 55px;
+    text-align: center;
+    font-weight: 600;
+  }
+  .nav-counter span {
+    color: var(--rust-deep);
+    font-size: 1.15em;
+  }
+
+  /* ============ PROGRESS BAR ============ */
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rust), var(--gold), var(--moss));
+    transition: width 0.5s cubic-bezier(.2,.8,.2,1);
+    z-index: 200;
+    box-shadow: 0 0 10px rgba(201, 81, 42, 0.5);
+  }
+
+  /* ============ SLIDE INDICATOR ============ */
+  .slide-label {
+    position: fixed;
+    top: clamp(14px, 2.5vh, 24px);
+    right: clamp(16px, 3vw, 30px);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: var(--fs-xs);
+    letter-spacing: 3px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    z-index: 10;
+    font-weight: 500;
+    background: rgba(253, 251, 242, 0.7);
+    padding: 6px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .slide-label span {
+    color: var(--rust);
+    font-weight: 700;
+  }
+
+  /* ============ VIDEO MODAL ============ */
+  #videoModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  #videoModal.active {
+    display: flex;
+  }
+  .video-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+  }
+  .video-close-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: var(--rust);
+    color: var(--cream);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10;
+  }
+  #videoPlayer {
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    background: #000;
+  }
+
+  /* ============ MOBILE-SPECIFIC ADJUSTMENTS ============ */
+  @media (max-width: 768px) {
+    .slide {
+      padding: 70px 20px 130px;
+    }
+
+    /* Stack hook content vertically on mobile */
+    .hook-content {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    .hook-right {
+      order: -1; /* Image first on mobile */
+    }
+    .video-btn {
+      align-self: center;
+    }
+
+    /* Single column for vocab on mobile */
+    .vocab-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Slide label smaller on mobile */
+    .slide-label {
+      font-size: 0.65rem;
+      padding: 4px 10px;
+    }
+
+    /* Cover meta tighter */
+    .cover-meta {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slide {
+      padding: 70px 16px 130px;
+    }
+    .title-bar {
+      font-size: 2rem;
+    }
+    .definition-checklist {
+      flex-direction: column;
+      align-items: center;
+    }
+    .check-card {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+
+  /* Landscape phone */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .slide {
+      padding: 50px 30px 100px;
+    }
+    .cover-illustration {
+      width: min(40vw, 280px);
+    }
+  }
+
+  /* Large screens */
+  @media (min-width: 1400px) {
+    .slide {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress" id="progress"></div>
+
+<!-- Slide label -->
+<div class="slide-label"><span id="slide-name">Cover</span></div>
+
+<!-- DECK -->
+<div class="deck" id="deck">
+
+  <!-- ========== SLIDE 1: COVER ========== -->
+  <section class="slide cover active" data-name="Cover">
+
+    <h1 class="cover-title anim anim-1">Are foxes becoming<br>domesticated?</h1>
+
+    <div class="cover-meta anim anim-2">
+      <span>An Article Discussion</span>
+      <span class="author">by Marti Trgovich</span>
+      <span style="font-size: 0.9em; opacity: 0.7;">Published November 24, 2025 · National Geographic</span>
+    </div>
+
+    <!-- Cute foxes illustration -->
+    <svg class="cover-illustration anim anim-3" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+      <!-- Big fox -->
+      <g>
+        <path d="M50 180 Q20 140 30 90 Q50 70 80 90 Q90 130 75 170" fill="#c9512a"/>
+        <path d="M30 90 Q40 100 50 105" fill="#fdfbf2"/>
+        <ellipse cx="140" cy="180" rx="65" ry="50" fill="#c9512a"/>
+        <ellipse cx="140" cy="195" rx="45" ry="30" fill="#e88a5e"/>
+        <path d="M100 130 Q90 80 130 65 Q170 60 180 100 Q185 140 145 145 Z" fill="#c9512a"/>
+        <path d="M100 90 L95 55 L120 80 Z" fill="#c9512a"/>
+        <path d="M165 75 L180 50 L185 85 Z" fill="#c9512a"/>
+        <path d="M104 82 L110 65 L117 78 Z" fill="#9a3a18"/>
+        <path d="M171 72 L180 58 L182 78 Z" fill="#9a3a18"/>
+        <path d="M105 105 Q130 100 145 130 L100 130 Z" fill="#fdfbf2"/>
+        <ellipse cx="125" cy="100" rx="3" ry="5" fill="#2d3a24"/>
+        <ellipse cx="105" cy="128" rx="3" ry="2" fill="#2d3a24"/>
+      </g>
+
+      <!-- Small fox -->
+      <g>
+        <path d="M340 180 Q360 140 350 110 Q330 95 310 110 Q305 145 320 175" fill="#e88a5e"/>
+        <path d="M345 130 Q355 135 358 145" fill="#fdfbf2"/>
+        <ellipse cx="260" cy="190" rx="45" ry="35" fill="#e88a5e"/>
+        <ellipse cx="260" cy="200" rx="32" ry="22" fill="#fdfbf2"/>
+        <path d="M230 150 Q225 115 255 110 Q285 115 290 145 Q288 175 250 175 Z" fill="#e88a5e"/>
+        <path d="M232 120 L228 95 L245 115 Z" fill="#e88a5e"/>
+        <path d="M278 115 L290 95 L290 122 Z" fill="#e88a5e"/>
+        <path d="M232 135 Q255 132 265 160 L230 158 Z" fill="#fdfbf2"/>
+        <ellipse cx="250" cy="130" rx="2.5" ry="4" fill="#2d3a24"/>
+        <ellipse cx="232" cy="155" rx="2.5" ry="1.5" fill="#2d3a24"/>
+      </g>
+
+      <g fill="#d9a441">
+        <circle cx="70" cy="225" r="5"/>
+        <circle cx="200" cy="230" r="4"/>
+        <circle cx="220" cy="215" r="5"/>
+        <circle cx="320" cy="225" r="4"/>
+        <circle cx="370" cy="220" r="5"/>
+      </g>
+      <g fill="#c9512a">
+        <circle cx="70" cy="225" r="1.5"/>
+        <circle cx="200" cy="230" r="1.5"/>
+        <circle cx="220" cy="215" r="1.5"/>
+        <circle cx="320" cy="225" r="1.5"/>
+        <circle cx="370" cy="220" r="1.5"/>
+      </g>
+      <g stroke="#6b7a3a" stroke-width="2" stroke-linecap="round" fill="none">
+        <path d="M30 230 Q35 215 40 230"/>
+        <path d="M180 235 Q185 220 190 235"/>
+        <path d="M290 232 Q295 218 300 232"/>
+        <path d="M380 235 Q385 220 390 235"/>
+      </g>
+    </svg>
+
+    <p class="anim anim-4" style="font-family: 'Caveat', cursive; font-size: var(--fs-lg); color: var(--ink-soft); margin-top: 20px;">
+      ✦ Tap the arrows or press → to begin ✦
+    </p>
+  </section>
+
+  <!-- ========== SLIDE 2: HOOK ========== -->
+  <section class="slide" data-name="The Question">
+    <div class="hook-content">
+      <div class="hook-left">
+        <div class="title-bar anim anim-1" style="text-align: left;">Foxes in our gardens<span class="dot">.</span></div>
+
+        <div class="hook-question anim anim-2">
+          A <em>slew of viral videos</em> shows wild foxes acting friendly toward people — approaching humans, sitting on walls, even seeming to <em>pose for the camera</em>.
+        </div>
+
+        <div class="hook-question anim anim-3" style="color: var(--rust-deep); font-weight: 600;">
+          So... are foxes really becoming our next house pet?
+        </div>
+
+        <button class="video-btn anim anim-4" onclick="openVideo('video1')">
+          Watch Video 1
+        </button>
+      </div>
+
+      <div class="hook-right">
+        <div class="hook-image-card anim anim-2">
+          <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="280" fill="#a5a5a0"/>
+            <g fill="#8d6e5a" opacity="0.7">
+              <rect x="0" y="200" width="400" height="80"/>
+            </g>
+            <g stroke="#5a3e2a" stroke-width="1" opacity="0.4">
+              <line x1="0" y1="220" x2="400" y2="220"/>
+              <line x1="0" y1="240" x2="400" y2="240"/>
+              <line x1="0" y1="260" x2="400" y2="260"/>
+              <line x1="40" y1="200" x2="40" y2="220"/>
+              <line x1="100" y1="220" x2="100" y2="240"/>
+              <line x1="180" y1="200" x2="180" y2="220"/>
+              <line x1="260" y1="240" x2="260" y2="260"/>
+              <line x1="320" y1="220" x2="320" y2="240"/>
+              <line x1="160" y1="240" x2="160" y2="260"/>
+            </g>
+            <g opacity="0.6">
+              <ellipse cx="40" cy="100" rx="60" ry="80" fill="#6b7a3a"/>
+              <ellipse cx="350" cy="120" rx="70" ry="90" fill="#4a5a2a"/>
+              <ellipse cx="380" cy="60" rx="40" ry="50" fill="#7a8a4a"/>
+            </g>
+            <rect x="270" y="60" width="50" height="80" fill="#5a7a8a" opacity="0.6"/>
+            <line x1="295" y1="60" x2="295" y2="140" stroke="#3a4a5a" stroke-width="2" opacity="0.6"/>
+            <line x1="270" y1="100" x2="320" y2="100" stroke="#3a4a5a" stroke-width="2" opacity="0.6"/>
+
+            <g>
+              <path d="M120 200 Q90 185 75 215 Q70 240 95 235 Q120 225 130 210" fill="#c9512a"/>
+              <path d="M80 220 Q85 232 95 233" fill="#fdfbf2"/>
+              <ellipse cx="180" cy="180" rx="55" ry="35" fill="#c9512a"/>
+              <ellipse cx="195" cy="195" rx="40" ry="20" fill="#e88a5e"/>
+              <path d="M200 135 Q190 110 220 100 Q260 105 270 130 Q272 160 235 165 Z" fill="#c9512a"/>
+              <path d="M205 115 L200 85 L222 110 Z" fill="#c9512a"/>
+              <path d="M255 105 L268 80 L272 110 Z" fill="#c9512a"/>
+              <path d="M208 108 L213 90 L220 105 Z" fill="#9a3a18"/>
+              <path d="M260 100 L268 85 L270 102 Z" fill="#9a3a18"/>
+              <path d="M205 130 Q235 130 245 155 L200 158 Z" fill="#fdfbf2"/>
+              <ellipse cx="232" cy="125" rx="2.5" ry="3.5" fill="#2d3a24"/>
+              <ellipse cx="258" cy="128" rx="2.5" ry="3.5" fill="#2d3a24"/>
+              <ellipse cx="205" cy="148" rx="3" ry="2" fill="#2d3a24"/>
+              <rect x="160" y="200" width="8" height="12" fill="#9a3a18"/>
+              <rect x="200" y="205" width="8" height="10" fill="#9a3a18"/>
+            </g>
+          </svg>
+          <div class="hook-image-caption">A wild fox sitting calmly on a garden wall</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 3: DEFINITION ========== -->
+  <section class="slide definition" data-name="Definition">
+    <div class="title-bar anim anim-1">But is it actually true?</div>
+
+    <div class="definition-content">
+      <p class="definition-q anim anim-2">What does <em>"domesticated"</em> really mean?</p>
+
+      <p class="definition-text anim anim-3">
+        To be considered domesticated, an animal must experience <strong>both behavioural and physical changes</strong> — they grow tamer and often evolve to be smaller than the wild animal in some way.
+      </p>
+
+      <div class="definition-checklist">
+        <div class="check-card anim anim-4">
+          <div class="icon">🐾</div>
+          <div class="label">Behaviour</div>
+        </div>
+        <div class="check-card anim anim-5">
+          <div class="icon">📏</div>
+          <div class="label">Physical traits</div>
+        </div>
+        <div class="check-card anim anim-6">
+          <div class="icon">🧬</div>
+          <div class="label">Genetics</div>
+        </div>
+      </div>
+
+      <p class="definition-quote anim anim-6">
+        The final clincher is the genetics.
+        <span class="definition-source">— Blake Morton, animal behaviour expert</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 4: ALERT ========== -->
+  <section class="slide alert-slide" data-name="Warning">
+    <div class="title-bar anim anim-1">A scientist's warning</div>
+
+    <div class="alert-banner anim anim-2">
+      <span class="alert-icon">⚠</span>
+      ALERT
+      <span class="alert-icon">⚠</span>
+    </div>
+
+    <p class="alert-quote anim anim-3">
+      "Suggesting that wild foxes are on a pathway to domestication <em>risks normalising practices</em> that can be harmful both to the animals and to humans."
+    </p>
+
+    <p class="alert-source anim anim-4">
+      — <strong>Cinthia Abbona</strong>, biologist with the National Scientific and Technical Research Council (Argentina)
+    </p>
+
+    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" style="width: min(180px, 50vw); margin-top: 30px;" class="anim anim-5">
+      <ellipse cx="100" cy="80" rx="80" ry="40" fill="#e88a5e"/>
+      <ellipse cx="100" cy="85" rx="65" ry="28" fill="#fdfbf2"/>
+      <path d="M150 75 Q180 60 175 35 Q150 20 130 35 Q125 55 140 70" fill="#e88a5e"/>
+      <path d="M150 75 Q165 65 168 50" fill="#fdfbf2"/>
+      <ellipse cx="60" cy="65" rx="35" ry="28" fill="#e88a5e"/>
+      <path d="M45 50 L40 25 L62 45 Z" fill="#e88a5e"/>
+      <path d="M75 45 L85 22 L88 48 Z" fill="#e88a5e"/>
+      <path d="M48 47 L43 30 L58 45 Z" fill="#c9512a"/>
+      <path d="M77 43 L84 28 L86 45 Z" fill="#c9512a"/>
+      <path d="M35 70 Q60 65 75 85 L30 85 Z" fill="#fdfbf2"/>
+      <path d="M50 60 Q55 63 60 60" stroke="#2d3a24" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M68 58 Q73 61 78 58" stroke="#2d3a24" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="35" cy="78" rx="3" ry="2" fill="#2d3a24"/>
+    </svg>
+  </section>
+
+  <!-- ========== SLIDE 5: FACTS / NUMBERS ========== -->
+  <section class="slide facts" data-name="The Reality">
+    <div class="title-bar anim anim-1">The reality behind the cuteness</div>
+
+    <p style="text-align: center; font-style: italic; color: var(--ink-soft); margin-bottom: clamp(20px, 3vh, 30px); font-size: var(--fs-md); max-width: 800px; margin-left: auto; margin-right: auto;" class="anim anim-2">
+      Wild foxes living near humans face serious risks — and so do the people who try to keep them.
+    </p>
+
+    <div class="facts-grid">
+      <div class="fact-card anim anim-3">
+        <div class="fact-stat">1,500<sup>+</sup></div>
+        <p class="fact-text">
+          The number of wild foxes <strong>rescued and rehabilitated every year</strong> in the UK by <strong>The Fox Project</strong>, founded by Trevor Williams.
+        </p>
+        <p class="fact-source">Many foxes suffer from injuries, mange, and human-related dangers.</p>
+      </div>
+
+      <div class="fact-card anim anim-4">
+        <div class="fact-stat">50<sup>%</sup></div>
+        <p class="fact-text">
+          DeFisher estimates that, in the U.S., at least <strong>half of all "pet" foxes</strong> bought from the exotic trade end up <strong>displaced, euthanised, or illegally released</strong>.
+        </p>
+        <p class="fact-source">"Cute videos" hide a much darker reality for the animals involved.</p>
+      </div>
+    </div>
+
+    <button class="video-btn anim anim-5" onclick="openVideo('video2')" style="margin: clamp(20px, 4vh, 40px) auto 0; align-self: center;">
+      Watch Video 2
+    </button>
+  </section>
+
+  <!-- ========== SLIDE 6: STUDIES ========== -->
+  <section class="slide studies" data-name="The Studies">
+    <div class="title-bar anim anim-1">What does the research say?</div>
+
+    <p style="text-align: center; font-style: italic; color: var(--ink-soft); margin-bottom: clamp(20px, 3vh, 30px); font-size: var(--fs-base); max-width: 800px; margin-left: auto; margin-right: auto;" class="anim anim-2">
+      Two recent studies suggest foxes <em>may once</em> have been kept as pets...
+    </p>
+
+    <div class="studies-container">
+      <div class="study-card anim anim-3">
+        <span class="study-tag">Study 1 · 2025</span>
+        <h3 class="study-title">Fuegian Dogs of South America</h3>
+        <p class="study-body">
+          A 2025 study found that indigenous South American cultures kept <strong>semi-tame pet foxes</strong> known as <em>Fuegian Dogs</em>.
+        </p>
+        <div class="study-highlight">
+          📚 Source: <strong>Journal of Zoology</strong> (Wiley)
+        </div>
+      </div>
+
+      <div class="study-card anim anim-4">
+        <span class="study-tag">Study 2 · Archaeology</span>
+        <h3 class="study-title"><em>Dusicyon avus</em></h3>
+        <p class="study-body">
+          Archaeologists found a now-extinct fox species, <em>Dusicyon avus</em>, <strong>buried with its human</strong> — suggesting that man's best friend may once have been a fox.
+        </p>
+        <div class="study-highlight">
+          📚 Source: <strong>Royal Society Open Science</strong>
+        </div>
+      </div>
+
+      <div class="study-card anim anim-5">
+        <span class="study-tag" style="background: var(--accent) !important;">Russian Experiment</span>
+        <h3 class="study-title">60 years of selective breeding</h3>
+        <p class="study-body">
+          The only record of <em>truly</em> domesticated foxes comes from a controversial Russian genetics experiment — almost <strong>60 years</strong> of selective breeding produced foxes that <strong>licked the hand</strong> of experimenters and <strong>wagged their tails</strong> when humans approached.
+        </p>
+        <div class="study-highlight" style="background: rgba(125, 46, 179, 0.1); border-left-color: var(--accent);">
+          ⚗ A unique scientific case — not natural domestication
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 7: CONCLUSION ========== -->
+  <section class="slide conclusion" data-name="Conclusion">
+    <div class="title-bar anim anim-1">So... will we ever have pet foxes?</div>
+
+    <p class="conclusion-q anim anim-2">Will we ever truly domesticate foxes?</p>
+
+    <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" style="width: min(180px, 40vw); margin: 0 auto 20px;" class="anim anim-3">
+      <path d="M170 110 Q200 90 195 60 Q170 50 155 70 Q150 95 165 115" fill="#c9512a"/>
+      <path d="M175 95 Q185 85 188 70" fill="#fdfbf2"/>
+      <rect x="120" y="120" width="10" height="30" fill="#9a3a18"/>
+      <rect x="145" y="125" width="10" height="28" fill="#9a3a18"/>
+      <ellipse cx="115" cy="110" rx="55" ry="30" fill="#c9512a"/>
+      <ellipse cx="115" cy="120" rx="42" ry="20" fill="#fdfbf2"/>
+      <rect x="70" y="125" width="10" height="32" fill="#9a3a18"/>
+      <rect x="90" y="128" width="10" height="30" fill="#9a3a18"/>
+      <path d="M50 95 Q40 65 70 55 Q105 60 110 90 Q105 115 70 115 Z" fill="#c9512a"/>
+      <path d="M55 70 L50 40 L72 65 Z" fill="#c9512a"/>
+      <path d="M95 60 L108 35 L112 65 Z" fill="#c9512a"/>
+      <path d="M58 63 L55 45 L68 60 Z" fill="#9a3a18"/>
+      <path d="M99 57 L106 42 L108 60 Z" fill="#9a3a18"/>
+      <path d="M50 90 Q80 85 90 105 L48 108 Z" fill="#fdfbf2"/>
+      <ellipse cx="78" cy="78" rx="3" ry="4" fill="#2d3a24"/>
+      <ellipse cx="95" cy="80" rx="3" ry="4" fill="#2d3a24"/>
+      <ellipse cx="50" cy="98" rx="3" ry="2" fill="#2d3a24"/>
+      <path d="M55 105 Q60 108 65 105" stroke="#2d3a24" stroke-width="1" fill="none"/>
+    </svg>
+
+    <p class="conclusion-answer anim anim-4">"Definitely not in our lifetimes."</p>
+
+    <div class="conclusion-quote anim anim-5">
+      <strong>"It took many thousands of years for dogs to become domesticated."</strong>
+      <br><br>
+      Real domestication is a process that spans <em>many, many generations</em> — far beyond what social media trends would suggest.
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 8: VOCABULARY ========== -->
+  <section class="slide vocab" data-name="Vocabulary">
+    <div class="title-bar anim anim-1">Key Vocabulary</div>
+
+    <p class="vocab-intro anim anim-2">👆 Tap each card to reveal its definition</p>
+
+    <div class="vocab-grid">
+      <div class="vocab-card anim anim-2" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">slew <span class="flip-hint">tap</span></div>
+        <div class="placeholder">noun · informal</div>
+        <div class="vocab-definition">A <strong>large number</strong> or a lot of something. <br><em>Ex: A slew of viral videos.</em></div>
+      </div>
+
+      <div class="vocab-card anim anim-3" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">hilly slope <span class="flip-hint">tap</span></div>
+        <div class="placeholder">noun phrase</div>
+        <div class="vocab-definition">A <strong>steep or uneven incline</strong> on land with small hills.</div>
+      </div>
+
+      <div class="vocab-card anim anim-3" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">semi-tame <span class="flip-hint">tap</span></div>
+        <div class="placeholder">adjective</div>
+        <div class="vocab-definition"><strong>Partly domesticated</strong> — not fully wild but not fully trained either.</div>
+      </div>
+
+      <div class="vocab-card anim anim-4" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">afflicted <span class="flip-hint">tap</span></div>
+        <div class="placeholder">verb / adj</div>
+        <div class="vocab-definition"><strong>Suffering</strong> from a problem, illness, or hardship.</div>
+      </div>
+
+      <div class="vocab-card anim anim-4" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">wagged <span class="flip-hint">tap</span></div>
+        <div class="placeholder">verb · past</div>
+        <div class="vocab-definition"><strong>Moved back and forth</strong>, usually referring to a dog's tail.</div>
+      </div>
+
+      <div class="vocab-card anim anim-5" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">clincher <span class="flip-hint">tap</span></div>
+        <div class="placeholder">noun</div>
+        <div class="vocab-definition">The <strong>deciding factor</strong> — the thing that proves or confirms something.</div>
+      </div>
+
+      <div class="vocab-card anim anim-5" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">euthanise <span class="flip-hint">tap</span></div>
+        <div class="placeholder">verb</div>
+        <div class="vocab-definition">To <strong>painlessly end the life</strong> of an animal, often for medical reasons.</div>
+      </div>
+
+      <div class="vocab-card anim anim-5" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">normalise <span class="flip-hint">tap</span></div>
+        <div class="placeholder">verb</div>
+        <div class="vocab-definition">To make something <strong>seem normal or acceptable</strong> in society.</div>
+      </div>
+
+      <div class="vocab-card anim anim-6" onclick="this.classList.toggle('flipped')">
+        <div class="vocab-word">rehabilitate <span class="flip-hint">tap</span></div>
+        <div class="placeholder">verb</div>
+        <div class="vocab-definition">To <strong>restore</strong> an animal (or person) to health and normal life.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 9: DISCUSSION ========== -->
+  <section class="slide discussion" data-name="Discussion">
+    <h2 class="discussion-title anim anim-1">Let's discuss! 💬</h2>
+
+    <p style="text-align: center; font-style: italic; color: var(--ink-soft); margin-bottom: clamp(20px, 3vh, 30px); font-size: var(--fs-base); max-width: 700px; margin-left: auto; margin-right: auto;" class="anim anim-2">
+      In pairs or small groups — pick one question and share your opinion with the class.
+    </p>
+
+    <div class="discussion-grid">
+      <div class="discussion-card anim anim-3">
+        <div class="discussion-number">1.</div>
+        <p class="discussion-q">
+          Would you ever <em>want</em> a fox as a pet? Why or why not?
+        </p>
+      </div>
+
+      <div class="discussion-card anim anim-3">
+        <div class="discussion-number">2.</div>
+        <p class="discussion-q">
+          Do you think viral animal videos <em>change</em> how we see wildlife? Give examples.
+        </p>
+      </div>
+
+      <div class="discussion-card anim anim-4">
+        <div class="discussion-number">3.</div>
+        <p class="discussion-q">
+          Is it <em>ethical</em> to keep exotic animals as pets, even if it's legal?
+        </p>
+      </div>
+
+      <div class="discussion-card anim anim-4">
+        <div class="discussion-number">4.</div>
+        <p class="discussion-q">
+          What can governments or individuals do to <em>protect urban wildlife</em>?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 10: THANKS ========== -->
+  <section class="slide thanks" data-name="Thank You">
+    <h1 class="thanks-title anim anim-1">Thank you!</h1>
+    <p class="thanks-sub anim anim-2">Any questions about foxes? 🦊</p>
+
+    <div class="thanks-sources anim anim-3">
+      <h3>📖 Sources</h3>
+      <ul>
+        <li>nationalgeographic.com/animals/article/are-foxes-becoming-domesticated</li>
+        <li>Study 1 — Journal of Zoology: zslpublications.onlinelibrary.wiley.com/doi/10.1111/jzo.70031</li>
+        <li>Study 2 — Royal Society: royalsocietypublishing.org/doi/10.1098/rsos.231835</li>
+      </ul>
+    </div>
+
+    <p class="anim anim-4" style="margin-top: 30px; font-family: 'Caveat', cursive; font-size: var(--fs-lg); color: var(--moss);">
+      Presented by Douglas
+    </p>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <button class="nav-btn" id="prev" onclick="goTo(currentSlide - 1)" aria-label="Previous">←</button>
+  <div class="nav-counter"><span id="current">1</span> / <span id="total">10</span></div>
+  <button class="nav-btn" id="next" onclick="goTo(currentSlide + 1)" aria-label="Next">→</button>
+</nav>
+
+<!-- Video Modal -->
+<div id="videoModal">
+  <div class="video-modal-content">
+    <button class="video-close-btn" onclick="closeVideo()">✕</button>
+    <video id="videoPlayer" controls playsinline></video>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let currentSlide = 0;
+
+  document.getElementById('total').textContent = total;
+
+  function goTo(index) {
+    if (index < 0 || index >= total) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+
+    // Scroll to top of new slide
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Update UI
+    document.getElementById('current').textContent = currentSlide + 1;
+    document.getElementById('progress').style.width = `${((currentSlide + 1) / total) * 100}%`;
+    document.getElementById('slide-name').textContent = slides[currentSlide].dataset.name;
+    document.getElementById('prev').disabled = currentSlide === 0;
+    document.getElementById('next').disabled = currentSlide === total - 1;
+
+    // Reset vocab flips when leaving the vocab slide
+    if (slides[currentSlide].dataset.name !== 'Vocabulary') {
+      document.querySelectorAll('.vocab-card.flipped').forEach(c => c.classList.remove('flipped'));
+    }
+
+    // Re-trigger animations
+    slides[currentSlide].querySelectorAll('.anim').forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight; // trigger reflow
+      el.style.animation = '';
+    });
+  }
+
+  // Init progress
+  document.getElementById('progress').style.width = `${(1 / total) * 100}%`;
+  document.getElementById('prev').disabled = true;
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    // Don't navigate if user is in an input
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      e.preventDefault();
+      goTo(currentSlide + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      goTo(currentSlide - 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      goTo(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      goTo(total - 1);
+    } else if (e.key === 'Escape') {
+      closeVideo();
+    }
+  });
+
+  // Video handling
+  const videoSources = {
+    video1: 'snaptik_7500565383942933762_v3.mp4',
+    video2: 'snaptik_7546899621650435335_v3.mp4'
+  };
+
+  function openVideo(id) {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    player.src = videoSources[id];
+    modal.classList.add('active');
+    player.play().catch(() => {
+      // Autoplay may fail — user can click play
+    });
+  }
+
+  function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+    player.pause();
+    player.src = '';
+    modal.classList.remove('active');
+  }
+
+  // Close modal on background click
+  document.getElementById('videoModal').addEventListener('click', (e) => {
+    if (e.target.id === 'videoModal') closeVideo();
+  });
+
+  // Swipe gestures for mobile/tablet — only horizontal, only when scroll is at top or bottom doesn't matter for slide nav
+  let touchStartX = 0;
+  let touchStartY = 0;
+  document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchStartX - touchEndX;
+    const diffY = touchStartY - touchEndY;
+
+    // Only trigger slide change if horizontal swipe is dominant (not a vertical scroll)
+    if (Math.abs(diffX) > 80 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+      if (diffX > 0) goTo(currentSlide + 1);
+      else goTo(currentSlide - 1);
+    }
+  }, { passive: true });
+</script>
+
+</body>
+</html>
