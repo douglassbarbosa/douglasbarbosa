@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+
 jobs:
   deploy:
     name: FTP Deploy
@@ -20,11 +24,10 @@ jobs:
           server:       ${{ secrets.FTP_SERVER }}
           username:     ${{ secrets.FTP_USERNAME }}
           password:     ${{ secrets.FTP_PASSWORD }}
-          server-dir:   /public_html/
-          local-dir:    ./
+          local-dir:    ./douglasbarbosa.com/
+          server-dir:   ./
           exclude: |
             **/.git*
             **/.git*/**
-            .github/**
-            README.md
-            .gitignore
+            **/README.md
+            **/.DS_Store
