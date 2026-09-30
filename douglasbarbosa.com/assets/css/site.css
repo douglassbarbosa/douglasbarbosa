@@ -1,0 +1,331 @@
+:root{
+  --surface:      #F8FAFC;
+  --surface-deep: #EEF2F6;
+  --card:         #FFFFFF;
+  --navy:         #0F172A;
+  --slate:        #55637A;
+  --line:         #DCE3EC;
+  --accent:       #06B6D4;
+  --btn-bg:       #0F172A;
+  --btn-fg:       #FFFFFF;
+  --ring:         rgba(15,23,42,.12);
+
+  --font-sans: "Space Grotesk", "Manrope", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Space Mono", ui-monospace, monospace;
+  --measure: 62ch;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --surface:      #0B1220;
+    --surface-deep: #141F33;
+    --card:         #141F33;
+    --navy:         #E8EEF6;
+    --slate:        #9AA9BF;
+    --line:         #25344D;
+    --accent:       #22D3EE;
+    --btn-bg:       #22D3EE;
+    --btn-fg:       #06202B;
+    --ring:         rgba(232,238,246,.16);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;position:relative;
+  background:var(--surface);color:var(--navy);
+  font-family:var(--font-sans);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- language bar, top right ---------- */
+.langbar{
+  position:absolute;top:18px;right:18px;z-index:5;
+  display:flex;gap:4px;padding:4px;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+}
+.langbar button{
+  display:flex;align-items:center;gap:6px;
+  border:none;background:none;cursor:pointer;
+  padding:5px 9px 5px 5px;border-radius:999px;
+  font-family:var(--font-mono);font-size:12px;color:var(--slate);
+}
+.langbar button:hover{background:var(--surface-deep);color:var(--navy)}
+.langbar button[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg)}
+.flag{width:20px;height:20px;border-radius:50%;overflow:hidden;flex:none;box-shadow:0 0 0 1px var(--ring)}
+.flag svg{display:block;width:100%;height:100%}
+@media (max-width:420px){
+  .langbar{top:14px;right:12px}
+  .langbar button{padding:5px}
+  .langbar .code{display:none}   /* flags only on very small screens */
+}
+
+/* ---------- layout shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:78px 22px 72px}
+
+/* ---------- identity rail ---------- */
+.rail{padding-bottom:34px;border-bottom:1px solid var(--line);margin-bottom:44px}
+.mark{font-family:var(--font-mono);font-size:15px;letter-spacing:.06em;color:var(--slate);display:flex;align-items:center;gap:8px}
+.mark b{color:var(--navy);font-weight:500}
+.caret{width:9px;height:17px;background:var(--accent);display:inline-block;transform:translateY(2px)}
+@media (prefers-reduced-motion:no-preference){
+  .caret{animation:blink 1.4s steps(1) infinite}
+  @keyframes blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+}
+.name{font-size:clamp(2.1rem,8vw,3rem);line-height:1.04;font-weight:700;letter-spacing:-.025em;margin:22px 0 10px}
+.role{color:var(--slate);margin:0 0 22px;max-width:34ch}
+.role em{font-style:normal;color:var(--navy)}
+.availability{
+  font-family:var(--font-mono);
+  font-size:12px;
+  line-height:1.6;
+  color:var(--slate);
+  margin:0 0 22px;
+  max-width:36ch;
+}
+.tools{display:flex;align-items:center;gap:12px}
+.icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--navy);transition:border-color .15s,color .15s}
+.icon:hover{border-color:var(--accent);color:var(--accent)}
+.icon svg{width:19px;height:19px;fill:currentColor}
+
+/* ---------- CV ---------- */
+.cv-link{
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:var(--card);
+  color:var(--navy);
+  text-decoration:none;
+  font-family:var(--font-mono);
+  font-size:12px;
+  font-weight:500;
+  transition:border-color .15s,color .15s;
+}
+
+.cv-link:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* ---------- statement ---------- */
+.statement{font-size:clamp(1.35rem,5.2vw,2.1rem);line-height:1.25;letter-spacing:-.02em;max-width:20ch;margin:0 0 14px}
+.statement span{color:var(--slate)}
+.statement-sub{color:var(--slate);max-width:var(--measure);margin:0}
+
+/* ---------- impacts section ---------- */
+.impact{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:28px 0 0;
+}
+
+.impact-item{
+  border-top:2px solid var(--navy);
+  padding-top:12px;
+}
+
+.impact-number{
+  display:block;
+  font-size:1.65rem;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-.03em;
+  margin-bottom:7px;
+}
+
+.impact-label{
+  display:block;
+  color:var(--slate);
+  font-size:.82rem;
+  line-height:1.4;
+}
+
+@media (max-width:520px){
+  .impact{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+}
+
+/* ---------- project stack ---------- */
+.project-stack{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--slate);
+  margin:0 0 12px;
+}
+
+/* ---------- contact links ---------- */
+.contact-links{
+  display:flex;
+  gap:18px;
+  margin-top:18px;
+  font-family:var(--font-mono);
+  font-size:13px;
+}
+
+.contact-links a{
+  color:var(--slate);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  padding-bottom:2px;
+}
+
+.contact-links a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+/* ---------- sections ---------- */
+section{margin-top:64px;scroll-margin-top:20px}
+h2{font-size:1.05rem;font-weight:500;margin:0 0 26px;padding-bottom:12px;border-bottom:1px solid var(--line);color:var(--slate)}
+p{max-width:var(--measure)}
+.bio p{margin:0 0 18px}
+.bio p:last-child{margin-bottom:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px;padding:0;margin:0;list-style:none}
+.chips li{font-family:var(--font-mono);font-size:13.5px;border:1px solid var(--line);background:var(--card);padding:7px 13px;border-radius:6px}
+.chips li[data-core]{border-color:var(--navy)}
+.chips-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--slate);margin:26px 0 11px}
+.chips-soft li{border-style:dashed;background:none;color:var(--slate)}
+
+.live{list-style:none;padding:0;margin:0}
+.live li{padding:22px 0;border-bottom:1px solid var(--line)}
+.live li:first-child{padding-top:0}
+.live h3{margin:0 0 6px;font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+.live p{margin:0 0 12px;color:var(--slate);font-size:.95rem}
+.live .links{display:flex;gap:18px;font-family:var(--font-mono);font-size:13px}
+.live .links a{color:var(--slate);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.live .links a:hover{color:var(--accent);border-color:var(--accent)}
+
+.writing{background:var(--surface-deep);border-radius:10px;padding:26px 24px;border-left:3px solid var(--accent)}
+.writing p{margin:0 0 18px}
+.btn{display:inline-block;background:var(--btn-bg);color:var(--btn-fg);text-decoration:none;padding:12px 22px;border-radius:6px;font-size:.95rem}
+.btn:hover{background:var(--accent);color:var(--btn-fg)}
+
+.contact a.mail{font-family:var(--font-mono);font-size:clamp(.95rem,4vw,1.25rem);text-decoration:none;border-bottom:2px solid var(--accent)}
+.site-footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--slate);font-size:.85rem;font-family:var(--font-mono)}
+
+/* ---------- tablet ---------- */
+@media (min-width:640px){
+  .shell{padding:88px 40px 80px}
+  .langbar{top:24px;right:32px}
+}
+/* ---------- desktop: two columns, rail sticks ---------- */
+@media (min-width:900px){
+  .shell{display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,1.5fr);gap:80px;padding:100px 40px 90px}
+  .rail{position:sticky;top:70px;align-self:start;border-bottom:none;padding-bottom:0;margin-bottom:0}
+  section:first-child{margin-top:0}
+  .site-footer{grid-column:1 / -1}
+}
+
+/* =========================================================
+   DOCS — guias passo a passo
+   Reaproveita os tokens acima. Nada de cor nova aqui.
+   ========================================================= */
+
+/* ---------- link Docs no rail ---------- */
+.rail-nav{display:flex;gap:16px;margin:0 0 22px;font-family:var(--font-mono);font-size:13px}
+.rail-nav a{color:var(--slate);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.rail-nav a:hover{color:var(--accent);border-color:var(--accent)}
+.rail-nav a[aria-current="page"]{color:var(--navy);border-color:var(--navy)}
+
+/* ---------- breadcrumb ---------- */
+.crumb{font-family:var(--font-mono);font-size:12px;color:var(--slate);margin:0 0 18px}
+.crumb a{color:var(--slate);text-decoration:none;border-bottom:1px solid var(--line)}
+.crumb a:hover{color:var(--accent);border-color:var(--accent)}
+.crumb span{opacity:.5;padding:0 6px}
+
+/* ---------- lista de guias (mesmo padrão de .live) ---------- */
+.doc-list{list-style:none;padding:0;margin:0}
+.doc-list li{padding:22px 0;border-bottom:1px solid var(--line)}
+.doc-list li:first-child{padding-top:0}
+.doc-list h3{margin:0 0 6px;font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+.doc-list h3 a{text-decoration:none}
+.doc-list h3 a:hover{color:var(--accent)}
+.doc-list p{margin:0 0 12px;color:var(--slate);font-size:.95rem}
+.doc-list .doc-meta{margin:0}
+
+/* ---------- metadados: data + tags ---------- */
+.doc-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;color:var(--slate)}
+.doc-tag{border:1px solid var(--line);border-radius:5px;padding:3px 9px;background:var(--card)}
+.doc-date{opacity:.85}
+
+/* ---------- cabeçalho do guia ---------- */
+.doc-title{font-size:clamp(1.7rem,5.5vw,2.3rem);line-height:1.15;letter-spacing:-.022em;font-weight:700;margin:0 0 12px}
+.doc-lede{color:var(--slate);max-width:var(--measure);margin:0 0 18px}
+.doc-header{padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:8px}
+
+/* ---------- sumário lateral ---------- */
+.doc-toc{list-style:none;padding:0;margin:0;font-family:var(--font-mono);font-size:12.5px;line-height:1.5}
+.doc-toc li{margin-bottom:9px}
+.doc-toc a{color:var(--slate);text-decoration:none;border-left:2px solid var(--line);padding-left:10px;display:block}
+.doc-toc a:hover{color:var(--navy);border-color:var(--accent)}
+.doc-toc-label{font-family:var(--font-mono);font-size:12px;color:var(--slate);margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+
+/* ---------- passos numerados ----------
+   Numeração só existe porque isto é mesmo uma sequência. */
+.doc-steps{list-style:none;counter-reset:step;padding:0;margin:0}
+.doc-step{counter-increment:step;position:relative;padding:0 0 30px 46px;border-left:1px solid var(--line);margin-left:13px}
+.doc-step:last-child{border-left-color:transparent;padding-bottom:6px}
+.doc-step::before{
+  content:counter(step);
+  position:absolute;left:-14px;top:-2px;
+  width:27px;height:27px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--card);border:1px solid var(--line);
+  font-family:var(--font-mono);font-size:12px;color:var(--slate);
+}
+.doc-step h3{margin:0 0 10px;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;padding-top:2px}
+.doc-step > p{margin:0 0 14px}
+.doc-step > p:last-child{margin-bottom:0}
+@media (max-width:520px){
+  .doc-step{padding-left:34px;margin-left:11px}
+  .doc-step::before{left:-12px;width:23px;height:23px;font-size:11px}
+}
+
+/* ---------- blocos de código ---------- */
+.doc-code{margin:0 0 16px;border:1px solid var(--line);border-radius:7px;background:var(--surface-deep);overflow:hidden}
+.doc-code-name{font-family:var(--font-mono);font-size:11.5px;color:var(--slate);padding:8px 13px;border-bottom:1px solid var(--line);background:var(--card)}
+.doc-code pre{margin:0;padding:15px 16px;overflow-x:auto;font-family:var(--font-mono);font-size:13px;line-height:1.55}
+.doc-code code{font-family:inherit;white-space:pre}
+code.inline{font-family:var(--font-mono);font-size:.88em;background:var(--surface-deep);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+
+/* ---------- imagens / prints ---------- */
+.doc-shot{margin:0 0 16px}
+.doc-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:7px;background:var(--card)}
+.doc-shot figcaption{font-family:var(--font-mono);font-size:11.5px;color:var(--slate);margin-top:8px}
+
+/* ---------- avisos (mesmo padrão de .writing) ---------- */
+.doc-note,.doc-warning{background:var(--surface-deep);border-radius:9px;padding:16px 18px;margin:0 0 16px;border-left:3px solid var(--accent);font-size:.94rem}
+.doc-note p,.doc-warning p{margin:0;max-width:none}
+.doc-note p + p,.doc-warning p + p{margin-top:10px}
+.doc-warning{border-left-color:#E0A82E}
+@media (prefers-color-scheme:dark){.doc-warning{border-left-color:#F0C464}}
+.doc-note-title{font-family:var(--font-mono);font-size:11.5px;color:var(--slate);margin-bottom:6px}
+
+/* ---------- pré-requisitos ---------- */
+.doc-req{list-style:none;padding:0;margin:0}
+.doc-req li{padding:9px 0 9px 22px;border-bottom:1px solid var(--line);position:relative;font-size:.95rem}
+.doc-req li:last-child{border-bottom:none}
+.doc-req li::before{content:"";position:absolute;left:3px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+/* ---------- rodapé do guia: referências ---------- */
+.doc-refs{list-style:none;padding:0;margin:0;font-size:.94rem}
+.doc-refs li{margin-bottom:10px}
+.doc-refs a{color:var(--slate);text-decoration:none;border-bottom:1px solid var(--line)}
+.doc-refs a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- estado vazio / carregando da lista ---------- */
+.doc-empty{color:var(--slate);font-family:var(--font-mono);font-size:13px}
+
+/* ---------- no desktop o rail do guia também gruda ---------- */
+@media (min-width:900px){
+  .doc-page .rail{position:sticky;top:70px}
+}
