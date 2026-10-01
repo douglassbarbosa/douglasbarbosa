@@ -2,7 +2,7 @@
     updates:
     - package-ecosystem: "github-actions"
         directory: "/"
-        target-branch: "develop"   # PRs open against develop, keeping main for deliveries only
+        target-branch: "develop"
         schedule:
         interval: "monthly"
         commit-message:
