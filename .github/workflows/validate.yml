@@ -1,0 +1,35 @@
+name: Validate HTML
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: HTML Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6.0.0
+        with:
+          python-version: '3.x'
+
+      - name: Install html5validator
+        run: pip install html5validator
+
+      - name: Validate HTML files
+        run: |
+          html5validator \
+            --root douglasbarbosa.com/ \
+            --match "*.html" \
+            --ignore-re "Attribute .data-" \
+            --log INFO
